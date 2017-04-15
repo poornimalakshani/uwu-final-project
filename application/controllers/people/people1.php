@@ -18,8 +18,17 @@ class People1 extends MY_Controller {
 		$this->form_validation->set_rules('home_id','Home_Id','trim|required');
 
 		if ($this->form_validation->run() != FALSE) {
-			$people1 = $this->people1_model->insert('people', ['fullName' => $this->input->post('fullName')], ['dateOfBirth' => $this->input->post( 'dateOfBirth')], ['gender' => $this->input->post('gender')], ['status' => $this->input->post('status')], ['living_status' => $this->input->post('living_status')], ['nic' => $this->input->post('nic')], ['home_id' => $this->input->post('home_id
-				')]);
+			$insert = [
+				'fullName' => $this->input->post('fullName'), 
+				'dateOfBirth' => $this->input->post( 'dateOfBirth'), 
+				'gender' => $this->input->post('gender'), 
+				'status' => $this->input->post('status'),
+				'living_status' => $this->input->post('living_status'),
+				'nic' => $this->input->post('nic'),
+				'home_id' => $this->input->post('home_id')
+			];
+			
+			$people1 = $this->people1_model->insert('people', $insert);
 
 			redirect('/people/people1');
 			
