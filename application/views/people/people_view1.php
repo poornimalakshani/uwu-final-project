@@ -69,6 +69,7 @@ $this->load->view('layouts/header');
              		'id'   => 'home_id',
              		'value' => ''
              	);
+             
              echo form_input($data);
              
              echo form_submit('submit', 'Save');
