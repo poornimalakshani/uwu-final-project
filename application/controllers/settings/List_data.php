@@ -82,7 +82,6 @@ class List_data extends MY_Controller {
 		$this->load->view('settings/list_data/edit_field', $data);
 	}
 
-
 	public function add_new($id)
 	{
 		$data = array();

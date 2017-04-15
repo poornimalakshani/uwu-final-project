@@ -57,3 +57,6 @@ $route['settings/list_data/view/(:any)'] = "settings/list_data/view/$1";
 $route['settings/list_data/edit/(:any)'] = "settings/list_data/edit/$1";
 $route['settings/list_data/delete/(:any)'] = "settings/list_data/delete/$1";
 $route['settings/list_data/edit_filed/(:any)'] = "settings/list_data/edit_filed/$1";
+$route['home/home_view'] = "home/home_view";
+$route['people/people_view'] = "people/people_view";
+$route['people/people_view1'] = "people/people_view1";

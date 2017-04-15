@@ -1,7 +1,7 @@
 <?php 
 $this->load->view('layouts/header');
 	echo validation_errors();
-    echo form_open('');
+    echo form_open(''); //create form for login
     echo form_input(array(
     	'type' => 'text',
     	'name' => 'username',
