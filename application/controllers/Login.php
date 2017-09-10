@@ -15,18 +15,18 @@ class Login extends CI_Controller {
 
 			if ($admin) {
 				$this->session->set_userdata('admin', $admin);
-				redirect('/dashboard');
+				redirect('/dashboard');  // redirect to dashboard
 			}else{
 				$this->form_validation->set_rules('account', 'Account', 'callback__noaccount');
 				$this->form_validation->run();
 			}
 		}
 
-		$this->load->view('login/index_view');
+		$this->load->view('login/index_view'); // display login form
 	}
 
 	public function _noaccount(){
-		$this->form_validation->set_message('_noaccount', 'Sorry, your username or password incorrect');
+		$this->form_validation->set_message('_noaccount', 'Sorry, your username or password incorrect'); // display if username or passward is incorrect
 		return FALSE;
 	}
 }

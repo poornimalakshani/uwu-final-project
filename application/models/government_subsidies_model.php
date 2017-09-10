@@ -22,4 +22,6 @@ class government_subsidies_model extends MY_Model {
         return array_combine($id, $field);
     }
 
+   
+
 }

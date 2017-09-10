@@ -5,7 +5,7 @@ $this->load->view('layouts/header');
 	<div class="col-md-6">
     <h5>Settings</h5>
     <ul>
-        <?php foreach($list as $x) { ?>
+        <?php foreach($list as $x) { ?> 
         <li><a href="/settings/list_data/view/<?=$x->id?>"><?=$x->list_type?></a> <a href="/settings/list_data/edit/<?=$x->id?>">Edit</a> <a href="/settings/list_data/delete/<?=$x->id?>">Delete</a></li>
         <?php } ?>
         

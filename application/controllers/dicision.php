@@ -32,8 +32,29 @@ class Dicision extends MY_Controller {
    		$data['newlyRegisters'] = $this->people1_model->filterNewlyRegisterPeople();
    		$this->load->view('newly_registers/newly_registers_view', $data);
    		
-   		
-   	
+   		}
+
+  public function get_disable_subsidies(){
+      $data = array();
+      $this->load->model('people1_model');
+      $data['disableSubsidiesGranters'] = $this->people1_model->filterDisableSubsidiesGranters();
+      $this->load->view('disable_subsidies/disable_subsidies_view', $data);
+      }
+
+     public function newly_register(){
+      $data = array();
+      $this->load->model('people1_model');
+      $data['newlyRegisters'] = $this->people1_model->filterNewlyRegisterPeople1();
+      $this->load->view('registers/registers_view', $data);
+      
+      }
+
+      public function get_percentage_samurdhi_granters(){
+      $data = array();
+      $this->load->model('income_model');
+      $data['samurdhiGranters'] = $this->income_model->filterSamurdhiGranterPersentage();
+      $this->load->view('percentage_samurdhi/percentage_samurdhi_view', $data);
+
    }
 
-}
+  }
