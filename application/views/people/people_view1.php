@@ -15,6 +15,7 @@ $this->load->view('layouts/header');
              		'value' => ''
              	);
              echo form_input($data);
+             echo "</br>";
             
 
              echo form_label('Date of Birth:');
@@ -25,32 +26,36 @@ $this->load->view('layouts/header');
              		'value' => ''
              	);
              echo form_input($data);
+             echo "</br>";
              
 
              echo form_label('Gender');
 
              $data=array(
-             		'Male' => '1',
-             		'Female'   => '2'
+             		'1' => 'Male',
+             		'2'   => 'Female'
              		);
              echo form_dropdown('gender', $data, 'Male');
+             echo "</br>";
              
 
              echo form_label('Status');
 
              $data=array(
-             		'Single' => '3',
-             		'Married'   => '4'
+             		'3' => 'Single',
+             		'4'   => 'Married'
              		);
              echo form_dropdown('status', $data, 'Single');
+             echo "</br>";
             
              echo form_label('Living Status');
 
              $data=array(
-             		'Live' => '5',
-             		'Dead'   => '6'
+             		'5' => 'Live',
+             		'6'   => 'Dead'
              		);
              echo form_dropdown('living_status', $data, 'Live');
+             echo "</br>";
             
 
               echo form_label('NIC:');
@@ -61,6 +66,7 @@ $this->load->view('layouts/header');
              		'value' => ''
              	);
              echo form_input($data);
+             echo "</br>";
              
               echo form_label('Home_Id:');
 
@@ -71,6 +77,16 @@ $this->load->view('layouts/header');
              	);
              
              echo form_input($data);
+             echo "</br>";
+
+             echo form_label('Register on Electroral Registry');
+
+             $data=array(
+                    '81' => 'Yes',
+                    '82'   => 'No'
+                    );
+             echo form_dropdown('register_on_electroral_registry', $data, 'Yes');
+             echo "</br>";
              
              echo form_submit('submit', 'Save');
             echo form_close('');

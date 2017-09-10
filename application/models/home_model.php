@@ -6,4 +6,16 @@ class home_model extends MY_Model {
 		parent::__construct();
 	}
 
+	public function getHomeLocation($limit = 10){
+		$this->db->limit($limit);
+
+		$result = $this->db->get("home");
+
+		if ($result->num_rows() > 0) {
+			return $result->result();
+		}
+		return FALSE;
+
+	}
+
 }

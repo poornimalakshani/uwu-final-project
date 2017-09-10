@@ -40,6 +40,7 @@ $this->load->view('layouts/header');
                 //'size'          => '50',
                 //'style'         => 'width:50%'
             )); 
+             echo "</br>";
              //echo form_input(array('id' => 'address', 'name' => 'address'));
 
              echo form_label('Longitude :');
@@ -48,6 +49,7 @@ $this->load->view('layouts/header');
                 'id' => 'longitude',
                 'value' => set_value('longitude')
             )); 
+             echo "</br>";
              //echo form_input(array('id' => 'longitude', 'name' => 'longitude'));
 
              echo form_label('Latitude :');
@@ -56,6 +58,7 @@ $this->load->view('layouts/header');
                 'id' => 'latitude',
                 'value' => set_value('latitude')
             )); 
+             echo "</br>";
              //echo form_input(array('id' => 'latitude', 'name' => 'latitude'));
 
             echo form_submit('submit', 'Save');

@@ -17,7 +17,7 @@ class Home extends MY_Controller {
 		if ($this->form_validation->run() != FALSE) {
 			$home = $this->home_model->insert('home', ['address' => $this->input->post('address'), 'longitude' => $this->input->post( 'longitude'), 'latitude' => $this->input->post('latitude')]); 
 
-			redirect('/home/home');
+			redirect('/grama_niladhari/home');
 			
 		}
 
