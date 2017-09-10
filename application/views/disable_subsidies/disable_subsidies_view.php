@@ -15,7 +15,7 @@ $this->load->view('layouts/header');
     </thead>
     <tbody>
     <?php
-    foreach ($disableGranters as $key => $value) {
+    foreach ($disableSubsidiesGranters as $key => $value) {
         ?>
     
       <tr>

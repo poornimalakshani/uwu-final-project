@@ -38,6 +38,7 @@ class Dicision extends MY_Controller {
       $data = array();
       $this->load->model('people1_model');
       $data['disableSubsidiesGranters'] = $this->people1_model->filterDisableSubsidiesGranters();
+
       $this->load->view('disable_subsidies/disable_subsidies_view', $data);
       }
 
