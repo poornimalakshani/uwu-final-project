@@ -46,12 +46,12 @@ class people1_model extends MY_Model {
     }
 
       public function filterDisableSubsidiesGranters(){
-        $this->db->select( "p.id, p.fullName, i.income, lf.field");
+             $this->db->select( "p.id, p.fullName, i.income, lf.field");
         $this->db->where("i.income < 3000");
 
-		$this->db->join('income i', 'p.id = i.people_id', 'LEFT');
-		$this->db->join('unusual_conditions uc', 'p.id = uc.people_id', 'INNER');
-		$this->db->join('list_field lf', 'uc.type = lf.id', 'INNER');
+        $this->db->join('income i', 'p.id = i.people_id', 'LEFT');
+        $this->db->join('unusual_conditions uc', 'p.id = uc.people_id', 'INNER');
+        $this->db->join('list_field lf', 'uc.type = lf.id', 'INNER');
 
         $query = $this->db->get('people p');
 
@@ -66,6 +66,17 @@ class people1_model extends MY_Model {
         $this->db->where("({$age}) > 18");
         $this->db->where("living_status", 5);//living_status 5 when particular person is live
         $this->db->where("register_on_electroral_registry", 82);
+        $query = $this->db->get('people p');
+        $result = $query->result();
+
+        return $result;
+    }
+
+     public function filterParticipantsForSuwanariClinic(){
+        $age = "(DATEDIFF('".date('Y-m-d')."', STR_TO_DATE(p.dateOfBirth, '%Y-%m-%d'))/365)";
+        $this->db->select("*, ({$age}) AS ageInYears");
+        $this->db->where("({$age}) between 35 and 40 and gender = 2");
+
         $query = $this->db->get('people p');
         $result = $query->result();
 

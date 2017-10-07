@@ -22,4 +22,18 @@ class reg_wife_model extends MY_Model {
         return array_combine($id, $field);
     }
 
+    public function filterLowAgeMarriages(){
+             $this->db->select( "p.fullName, rw.age_in_marriage");
+        $this->db->where(" rw.age_in_marriage < 18 ");
+
+        $this->db->join('people p', 'p.id = rw.people_id', 'INNER');
+        
+
+        $query = $this->db->get('reg_wife rw');
+
+        $result = $query->result();
+
+        return $result;
+    }
+
 }

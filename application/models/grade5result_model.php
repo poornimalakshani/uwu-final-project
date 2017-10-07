@@ -22,4 +22,19 @@ class grade5result_model extends MY_Model {
         return array_combine($id, $field);
     }
 
+     public function filterscholarshipGranter(){
+              $this->db->select( "p.id, p.fullName, i.income");
+        $this->db->where("i.income < 4500 AND gs.result =334");
+
+        $this->db->join('income i', 'p.id = i.people_id', 'LEFT');
+        $this->db->join('grade5result gs', 'p.id = gs.people_id', 'INNER');
+        
+
+        $query = $this->db->get('people p');
+
+        $result = $query->result();
+
+        return $result;
+    }
+
 }

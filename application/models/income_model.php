@@ -35,12 +35,25 @@ class income_model extends MY_Model {
     }
 
      public function filterSamurdhiGranterPersentage(){
-        $subsidiesCount = '(SELECT COUNT(*) FROM government_subsidies)';
-        $peopleCount = '(SELECT COUNT(*) FROM home))';
+        $subsidiesCount = '(COUNT(*) from government_subsidies )';
+        $peopleCount = '( COUNT(*) from home)';
 
         $query =$this->db->select("({$subsidiesCount}/{$peopleCount})*100 As Percentage");
         
+        
         //$query = $this->db->get('home h');
+        $result = $query->result();
+
+        return $result;
+ }
+
+   public function filterNonSamurdhiGranters(){
+        $incomeCount = '(SELECT sum(i.income) FROM income i WHERE i.people_home_id = h.id)';
+
+        $this->db->select("*, ({$incomeCount}) AS income");
+        $this->db->where("({$incomeCount}) > 3000");
+
+        $query = $this->db->get('home h');
         $result = $query->result();
 
         return $result;
