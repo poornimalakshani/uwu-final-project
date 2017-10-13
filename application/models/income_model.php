@@ -35,7 +35,7 @@ class income_model extends MY_Model {
     }
 
      public function filterSamurdhiGranterPersentage(){
-        $subsidiesCount = '(COUNT(*) from government_subsidies )';
+            $subsidiesCount = '(COUNT(*) from government_subsidies )';
         $peopleCount = '( COUNT(*) from home)';
 
         $query =$this->db->select("({$subsidiesCount}/{$peopleCount})*100 As Percentage");
