@@ -22,4 +22,19 @@ class ol_result_model extends MY_Model {
         return array_combine($id, $field);
     }
 
+     public function filterAforMaths(){
+        $this->db->select( "ol.people_id, p.fullName");
+        $this->db->where("ey.examtype = 331 and ey.year = year(curdate()) and ol.subject = 273 and ol.result = 'A' ");
+
+        $this->db->join('examyears ey', 'ol.people_id = ey.people_id', 'INNER');
+        $this->db->join('people p', 'p.id = ol.people_id', 'INNER');
+        
+
+        $query = $this->db->get('ol_result ol');
+
+        $result = $query->result();
+
+        return $result;
+    }
+
 }

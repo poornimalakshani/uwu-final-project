@@ -90,4 +90,12 @@ class Dicision extends MY_Controller {
 
    }
 
+      public function filter_A_for_maths(){
+      $data = array();
+      $this->load->model('ol_result_model');
+      $data['AforMaths'] = $this->ol_result_model->filterAforMaths();
+      $this->load->view('AforMaths/AforMaths_view', $data);
+
+   }
+
   }

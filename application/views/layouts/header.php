@@ -80,7 +80,7 @@
   						<ul>
   							<li><a href="/dicision/get_samurdhi">Who grant Samurdhi?</a></li>
 							<li><a href="/dicision/get_social_service">Who grant Social Service Subsidies?</a></li>
-							<li><a href="/dicision/register">Who newly register in list?</a></li>
+							<li><a href="/dicision/register">Who register in list?</a></li>
               <li><a href="/dicision/get_disable_subsidies">Who grant Disable Subsidies?</a></li>
               <li><a href="/dicision/newly_register">Who Register?</a></li>
               <li><a href="/dicision/get_percentage_samurdhi_granters">Percentage of Samurdhi Granters?</a></li>
@@ -88,6 +88,7 @@
               <li><a href="/dicision/get_scholarship_subsidies">Who grant Scholarship?</a></li>
                <li><a href="/dicision/focus_on_suwanari_clinic">Who Participate For Suwanari Clinic?</a></li>
                <li><a href="/dicision/filter_low_age_marriage">Who get married in low age?</a></li>
+               <li><a href="/dicision/filter_A_for_maths">Who get A pass for Ordinary Level Mathamatics?</a></li>
   						</ul>
   					</li>
   				</ul>
