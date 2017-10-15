@@ -8,13 +8,11 @@ $this->load->view('layouts/header');
     <thead>
       <tr>
         <th>Percentage</th>
-       
-        <
       </tr>
     </thead>
     <tbody>
     <?php
-    foreach ($newlyRegisters as $key => $value) {
+    foreach ($samurdhiGranters as $key => $value) {
     	?>
     
       <tr>
