@@ -82,4 +82,29 @@ class people1_model extends MY_Model {
 
         return $result;
     }
+
+     public function filterSocialServiceGranterPersentage(){
+        
+        $subsidiesCount = "(select count( p.id) FROM people p where DATEDIFF('".date('Y-m-d')."', STR_TO_DATE(p.dateOfBirth, 
+        '%Y-%m-%d'))/365>70 )";
+        $peopleCount = "(SELECT COUNT(*) from home)";
+
+       $query =$this->db->query("SELECT ({$subsidiesCount}/{$peopleCount}) * 100 as percentage");
+        
+        $result = $query->result();
+
+        return $result;
+ }
+
+ public function filterPercentageGetElection(){
+        
+        $participatersCount = "(SELECT count(p.id)FROM people p WHERE DATEDIFF(CURRENT_DATE, p.dateOfBirth)/365 >=18 AND P.register_on_electroral_registry = 81 AND p.living_status = 5)";
+        $peopleCount = "(select count(id) from people)";
+
+       $query =$this->db->query("SELECT ({$participatersCount}/{$peopleCount}) * 100 as percentage");
+        
+        $result = $query->result();
+
+        return $result;
+ }
 }

@@ -98,4 +98,45 @@ class Dicision extends MY_Controller {
 
    }
 
+   public function get_percentage_social_service_granters(){
+      $data = array();
+      $this->load->model('people1_model');
+      $data['socialServiceGranters'] = $this->people1_model->filterSocialServiceGranterPersentage();
+      $this->load->view('percentage_social_service/percentage_social_service_view', $data);
+
+   }
+
+   public function get_average_income(){
+      $data = array();
+      $this->load->model('income_model');
+      $data['averageIncome'] = $this->income_model->filterAverageIncome();
+      $this->load->view('average_income/average_income_view', $data);
+
+   }
+
+    public function percentage_A_for_maths(){
+      $data = array();
+      $this->load->model('ol_result_model');
+      $data['AforMathsPercentage'] = $this->ol_result_model->filterAforMathsPercentage();
+      $this->load->view('AforMathsPrecentage/AforMathsPercentage_view', $data);
+
+   }
+
+    public function percentage_subsidies_granters(){
+      $data = array();
+      $this->load->model('government_subsidies_model');
+      $data['SubsidiesGrantersPercentage'] = $this->government_subsidies_model->filterSubsidiesGrantersPercentage();
+      $this->load->view('SubsidiesGrantersPercentage/SubsidiesGrantersPercentage_view', $data);
+
+   }
+
+     public function percentage_get_election(){
+      $data = array();
+      $this->load->model('people1_model');
+      $data['PercentageGetElection'] = $this->people1_model->filterPercentageGetElection();
+      $this->load->view('PercentageGetElection/PercentageGetElection_view', $data);
+
+   }
+    
+
   }

@@ -23,7 +23,7 @@ class ol_result_model extends MY_Model {
     }
 
      public function filterAforMaths(){
-        $this->db->select( "ol.people_id, p.fullName");
+        $this->db->select( "p.fullName");
         $this->db->where("ey.examtype = 331 and ey.year = year(curdate()) and ol.subject = 273 and ol.result = 'A' ");
 
         $this->db->join('examyears ey', 'ol.people_id = ey.people_id', 'INNER');
@@ -36,5 +36,17 @@ class ol_result_model extends MY_Model {
 
         return $result;
     }
+
+    public function filterAforMathsPercentage(){
+        
+        $Count = "(select count(ol.people_id) from ol_result ol inner join examyears ey on ol.people_id = ey.people_id where ey.examtype = 331 and ey.year = year(curdate()) and ol.subject = 273 and ol.result = 'A')";
+        $peopleCount = "(SELECT count(distinct people_id) from ol_result)";
+
+       $query =$this->db->query("SELECT ({$Count}/{$peopleCount}) * 100 as percentage");
+        
+        $result = $query->result();
+
+        return $result;
+ }
 
 }

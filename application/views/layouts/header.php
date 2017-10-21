@@ -89,9 +89,23 @@
                <li><a href="/dicision/focus_on_suwanari_clinic">Who Participate For Suwanari Clinic?</a></li>
                <li><a href="/dicision/filter_low_age_marriage">Who get married in low age?</a></li>
                <li><a href="/dicision/filter_A_for_maths">Who get A pass for Ordinary Level Mathamatics?</a></li>
+               <li><a href="/dicision/get_percentage_social_service_granters">Percentage of Social Service Granters?</a></li>
+               <li><a href="/dicision/get_average_income">Average Income?</a></li>
+               <li><a href="/dicision/percentage_A_for_maths">Who get A pass for Mathamatics in Ordinary Level?</a></li>
+               <li><a href="/dicision/percentage_subsidies_granters">Percentage of all subsidies granters?</a></li>
+               <li><a href="/dicision/percentage_get_election">Percentage of who have ability to get Election?</a></li>
   						</ul>
   					</li>
   				</ul>
+
+                  <li>
+              <a href="#">Charts</a>
+              <ul>
+                <li><a href="/dicision/getdata">Who grant Samurdhi?</a></li>
+             
+              </ul>
+            </li>
+          </ul>
   				
 				
 				

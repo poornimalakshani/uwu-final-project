@@ -22,6 +22,18 @@ class government_subsidies_model extends MY_Model {
         return array_combine($id, $field);
     }
 
+    public function filterSubsidiesGrantersPercentage(){
+        
+       $subsidiesCount = "(select count(id) from government_subsidies)";
+        $peopleCount = "(select count(id) from home)";
+
+        $query =$this->db->query("SELECT ({$subsidiesCount}/{$peopleCount})*100 As percentage");
+
+        
+        $result = $query->result();
+
+        return $result;
+ }
    
 
 }

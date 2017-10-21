@@ -40,6 +40,14 @@ class income_model extends MY_Model {
         $peopleCount = '(SELECT COUNT(*) from home)';
 
         $query =$this->db->query("SELECT ({$subsidiesCount}/{$peopleCount})*100 As percentage");
+
+        
+
+      //  $subsidiesCount = 'select count(
+    //(SELECT s.id FROM ( SELECT h.*, SUM(i.income) AS income FROM people AS p INNER JOIN `home` h ON (h.id = p.home_id) LEFT JOIN income i ON p.id = i.people_id WHERE p.living_status = 5 GROUP BY h.id) AS s WHERE s.income <= 3000 )';
+        //$peopleCount = '(SELECT COUNT(*) from home)';
+
+       //$query =$this->db->query("SELECT ({$subsidiesCount}/{$peopleCount}) * 100 as percentage)");
         
         $result = $query->result();
 
@@ -53,6 +61,15 @@ class income_model extends MY_Model {
         $this->db->where("({$incomeCount}) > 3000");
 
         $query = $this->db->get('home h');
+        $result = $query->result();
+
+        return $result;
+    }
+
+    public function filterAverageIncome(){
+        $avgIncome = "avg (income) as income from income";
+        $query =$this->db->query("SELECT {$avgIncome}");
+        
         $result = $query->result();
 
         return $result;
