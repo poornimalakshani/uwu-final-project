@@ -11,11 +11,25 @@ class Our_chart_model extends CI_Model
 
       $Count = "(SELECT s.id FROM ( SELECT h.*, SUM(i.income) AS income FROM people AS p INNER JOIN `home` h ON (h.id = p.home_id) LEFT JOIN income i ON p.id = i.people_id WHERE p.living_status = 5 GROUP BY h.id) AS s WHERE s.income <= 3000 )";
         
-       $query =$this->db->query("SELECT COUNT({$Count}) as Samurdgi granters");
+       $query =$this->db->query("SELECT COUNT({$Count}) as samurdgi_granters");
         
         $result = $query->result();
 
         return $result; 
         //return $this->db->get('Fruits')->result(); 
+    }
+
+	//get fruts data
+    public function not_get_samurdhi()
+    {
+
+      $Count = "(SELECT s.id FROM ( SELECT h.*, SUM(i.income) AS income FROM people AS p INNER JOIN `home` h ON (h.id = p.home_id) LEFT JOIN income i ON p.id = i.people_id WHERE p.living_status = 5 GROUP BY h.id) AS s WHERE s.income <= 3000 )";
+
+       $query =$this->db->query("SELECT COUNT({$Count}) as non_samurdhi_granters");
+
+        $result = $query->result();
+
+        return $result;
+        //return $this->db->get('Fruits')->result();
     } 
 }

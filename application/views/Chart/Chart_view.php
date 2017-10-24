@@ -14,7 +14,7 @@
        
     function drawChart() { 
       var jsonData = $.ajax({ 
-          url: "<?php echo base_url() . index.php/Our_Chart/getdata' ?>", 
+          url: "<?php echo base_url() . 'ourchart/getdata' ?>",
           dataType: "json", 
           async: false 
           }).responseText; 

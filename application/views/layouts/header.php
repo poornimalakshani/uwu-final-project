@@ -101,7 +101,7 @@
                   <li>
               <a href="#">Charts</a>
               <ul>
-                <li><a href="/dicision/getdata">Who grant Samurdhi?</a></li>
+                <li><a href="/chart/chart_view">Who grant Samurdhi?</a></li>
              
               </ul>
             </li>
