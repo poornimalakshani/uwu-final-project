@@ -1,6 +1,6 @@
 <!DOCTYPE html> 
   <head> 
-  <title>Samurdhi Granters and Non Samurdhi Granters</title> 
+  <title>Have ability to participate Election and Have not ability</title> 
     <!--Load the AJAX API--> 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> 
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> 
@@ -14,7 +14,7 @@
        
     function drawChart() { 
       var jsonData = $.ajax({ 
-          url: "<?php echo base_url() . 'OurChart/getdata' ?>",
+          url: "<?php echo base_url() . 'RegisterChart/getdata' ?>",
           dataType: "json", 
           async: false 
           }).responseText; 
@@ -37,7 +37,7 @@ h1 {
  
   <body> 
     <!--Div that will hold the pie chart--> 
-    <h1>Samurdhi Granters and Non Samurdhi Granters</h1> 
+    <h1>Have ability to get Election and Not get Election</h1> 
     <div id="chart_div"></div> 
   </body> 
 </html> 

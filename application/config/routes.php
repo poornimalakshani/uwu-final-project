@@ -90,4 +90,5 @@ $route['hospital_admissions/hospital_admissions_view'] = "hospital_admissions/ho
 $route['hear/hear_view'] = "hear/hear_view";
 $route['examyears/examyears_view'] = "examyears/examyears_view";
 $route['grade5result/grade5result_view'] = "grade5result/grade5result_view";
-$route['chart/chart_view'] = "OurChart/index";
+$route['Chart/Chart_view'] = "OurChart/index";
+$route['Chart/Register_Chart_view'] = "RegisterChart/index";

@@ -1,13 +1,13 @@
 <?php
 
 if (!defined('BASEPATH')) exit('No direct script access allowed');
-class OurChart extends CI_Controller
+class RegisterChart extends CI_Controller
 
 {
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->model('Our_chart_model');
+		$this->load->model('Register_chart_model');
 
 		// $this->load->library('form_validation');
 
@@ -16,12 +16,12 @@ class OurChart extends CI_Controller
 
 	public function index()
 	{
-		$this->load->view('Chart/Chart_view');
+		$this->load->view('Chart/Register_Chart_view');
 	}
 
 	public function getdata()
 	{
-		$data = $this->Our_chart_model->get_samurdhi();
+		$data = $this->Register_chart_model->get_election();
 
 		//data to json
 		$responce->cols[] = array(
@@ -41,16 +41,16 @@ class OurChart extends CI_Controller
         foreach($data as $cd) {
 			$responce->rows[]["c"] = array(
 				array(
-					"v" => "Get Samurdhi",
+					"v" => "Get Election",
 					"f" => null
 				) ,
 				array(
-					"v" => (int)$cd->samurdhi_granters,
+					"v" => (int)$cd->have_get_election,
 					"f" => null
 				)
 			);
 			
-            $data = $this->Our_chart_model->not_get_samurdhi();
+            $data = $this->Register_chart_model->not_get_election();
 
 			//data to json
 			$responce->cols[] = array(
@@ -70,11 +70,11 @@ class OurChart extends CI_Controller
 			foreach($data as $cd) {
 				$responce->rows[]["c"] = array(
 					array(
-						"v" => "Not Get Samurdhi",
+						"v" => "Not Get Election",
 						"f" => null
 					) ,
 					array(
-						"v" => (int)$cd->non_samurdhi_granters,
+						"v" => (int)$cd->heve_not_get_election,
 						"f" => null
 					)
 				);

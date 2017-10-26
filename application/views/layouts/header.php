@@ -101,8 +101,9 @@
                   <li>
               <a href="#">Charts</a>
               <ul>
-                <li><a href="/chart/chart_view">Who grant Samurdhi?</a></li>
-             
+                <li><a href="/Chart/Chart_view">Who Get Samurdhi?</a></li>
+                <li><a href="/Chart/Register_Chart_view">Who Get Election?</a></li>
+                
               </ul>
             </li>
           </ul>
