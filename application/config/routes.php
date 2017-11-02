@@ -92,3 +92,4 @@ $route['examyears/examyears_view'] = "examyears/examyears_view";
 $route['grade5result/grade5result_view'] = "grade5result/grade5result_view";
 $route['Chart/Chart_view'] = "OurChart/index";
 $route['Chart/Register_Chart_view'] = "RegisterChart/index";
+$route['Chart/Subsidies_Chart_view'] = "SubsidiesChart/index";

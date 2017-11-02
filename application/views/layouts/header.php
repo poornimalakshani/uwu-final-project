@@ -103,6 +103,7 @@
               <ul>
                 <li><a href="/Chart/Chart_view">Who Get Samurdhi?</a></li>
                 <li><a href="/Chart/Register_Chart_view">Who Get Election?</a></li>
+                <li><a href="/Chart/Subsidies_Chart_view">All Subsidies Granters?</a></li>
                 
               </ul>
             </li>
