@@ -94,6 +94,8 @@
                <li><a href="/dicision/percentage_A_for_maths">Who get A pass for Mathamatics in Ordinary Level?</a></li>
                <li><a href="/dicision/percentage_subsidies_granters">Percentage of all subsidies granters?</a></li>
                <li><a href="/dicision/percentage_get_election">Percentage of who have ability to get Election?</a></li>
+               <li><a href="/dicision/ability_to_do_AL">Who have ability to do Advanced Level?</a></li>
+               <li><a href="/dicision/get_normal_weight_children">Children who have Normal Weight?</a></li>
   						</ul>
   					</li>
   				</ul>

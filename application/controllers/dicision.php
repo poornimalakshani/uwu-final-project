@@ -138,5 +138,20 @@ class Dicision extends MY_Controller {
 
    }
     
+    public function ability_to_do_AL(){
+      $data = array();
+      $this->load->model('ol_result_model');
+      $data['AbilityToDoAL'] = $this->ol_result_model->filterStudents();
+      $this->load->view('Ability_to_do_AL/Ability_to_do_AL_view', $data);
+
+   }
+
+   public function get_normal_weight_children(){
+      $data = array();
+      $this->load->model('weight_height_bmi_model');
+      $data['NormalWeightChildren'] = $this->weight_height_bmi_model->filterNormalWeightChildren();
+      $this->load->view('Normal_weight_children/Normal_weight_children_view', $data);
+
+   }
 
   }
