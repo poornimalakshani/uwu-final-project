@@ -2,8 +2,8 @@
 $this->load->view('layouts/header');
 ?>  
 <div class="container">
-  <h2>Normal Weight Children</h2>
-  <p>Children who have Normal weight:</p>            
+  <h2>Malnutrition Children</h2>
+  <p>Children who have Malnutrition:</p>            
   <table class="table table-striped">
     <thead>
       <tr>
@@ -16,7 +16,7 @@ $this->load->view('layouts/header');
     </thead>
     <tbody>
     <?php
-    foreach ($NormalWeightChildren as $key => $value) {
+    foreach ($MalnutritionChildren as $key => $value) {
     	?>
     
       <tr>

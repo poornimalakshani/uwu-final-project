@@ -96,6 +96,9 @@
                <li><a href="/dicision/percentage_get_election">Percentage of who have ability to get Election?</a></li>
                <li><a href="/dicision/ability_to_do_AL">Who have ability to do Advanced Level?</a></li>
                <li><a href="/dicision/get_normal_weight_children">Children who have Normal Weight?</a></li>
+               <li><a href="/dicision/get_risk_to_weight_children">Children who have Risk For Malnutrition ?</a></li>
+               <li><a href="/dicision/get_malnutrition_children">Children who have Malnutrition ?</a></li>
+               <li><a href="/dicision/get_malnutrition_percentage">Percentage pf Malnutrition Children ?</a></li>
   						</ul>
   					</li>
   				</ul>
@@ -106,6 +109,7 @@
                 <li><a href="/Chart/Chart_view">Who Get Samurdhi?</a></li>
                 <li><a href="/Chart/Register_Chart_view">Who Get Election?</a></li>
                 <li><a href="/Chart/Subsidies_Chart_view">All Subsidies Granters?</a></li>
+                <li><a href="/Chart/Malnutrition_Chart_view">Distrinution of Normal, Risk for Malnutrition and Malnutrition?</a></li>
                 
               </ul>
             </li>

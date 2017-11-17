@@ -154,4 +154,28 @@ class Dicision extends MY_Controller {
 
    }
 
+   public function get_risk_to_weight_children(){
+      $data = array();
+      $this->load->model('weight_height_bmi_model');
+      $data['RiskWeightChildren'] = $this->weight_height_bmi_model->filterRiskToWeightChildren();
+      $this->load->view('Risk_weight_children/Risk_weight_children_view', $data);
+
+   }
+
+   public function get_malnutrition_children(){
+      $data = array();
+      $this->load->model('weight_height_bmi_model');
+      $data['MalnutritionChildren'] = $this->weight_height_bmi_model->filterMalnutritionChildren();
+      $this->load->view('Malnutrition_children/Malnutrition_children_view', $data);
+
+   }
+
+   public function get_malnutrition_percentage(){
+      $data = array();
+      $this->load->model('weight_height_bmi_model');
+      $data['MalnutritionPercentage'] = $this->weight_height_bmi_model->filterMalnutritionPercentage();
+      $this->load->view('Malnutrition_percentage/Malnutrition_precentage_view', $data);
+
+   }
+
   }
