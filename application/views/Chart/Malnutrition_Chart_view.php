@@ -14,7 +14,7 @@
        
     function drawChart() { 
       var jsonData = $.ajax({ 
-          url: "<?php echo base_url() . 'MalnutririonChart/getdata' ?>",
+          url: "<?php echo base_url() . 'MalnutritionChart/getdata' ?>",
           dataType: "json", 
           async: false 
           }).responseText; 

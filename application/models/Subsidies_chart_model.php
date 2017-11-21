@@ -11,7 +11,7 @@ class Subsidies_chart_model extends CI_Model
 
        
 
-       $query =$this->db->query("SELECT count(id) from government_subsidies as subsidies_granters");
+       $query =$this->db->query("SELECT count(id) AS count from government_subsidies as subsidies_granters");
         
         $result = $query->result();
 

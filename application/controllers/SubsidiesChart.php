@@ -45,7 +45,7 @@ class SubsidiesChart extends CI_Controller
 					"f" => null
 				) ,
 				array(
-					"v" => (int)$cd->subsidies_granters,
+					"v" => (int)$cd->count,
 					"f" => null
 				)
 			);
