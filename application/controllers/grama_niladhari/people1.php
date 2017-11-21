@@ -49,6 +49,9 @@ class People1 extends MY_Controller {
 
 		$data['people1'] = $this->people1_model->getAll('people');
 
+		$data['menu'] = "grama-niladhari";
+		$data['submenu'] = "grama-niladhari-people";
+
 		$this->load->view('people/people_view1', $data);
 
 			}

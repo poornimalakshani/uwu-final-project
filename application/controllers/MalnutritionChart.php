@@ -16,7 +16,9 @@ class MalnutritionChart extends CI_Controller
 
 	public function index()
 	{
-		$this->load->view('Chart/Malnutrition_Chart_view');
+		$data['menu'] = "charts";
+		$data['submenu'] = "charts-Malnutrition_Chart_view";
+		$this->load->view('Chart/Malnutrition_Chart_view', $data);
 	}
 
 	public function getdata()

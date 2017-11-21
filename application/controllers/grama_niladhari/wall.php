@@ -37,6 +37,8 @@ class Wall extends MY_Controller {
 
 		$data['wall'] = $this->wall_model->getAll('wall');
 
+		$data['menu'] = "grama-niladhari";
+		$data['submenu'] = "grama-niladhari-wall-type";
 		$this->load->view('wall/wall_view', $data);
 
 			}

@@ -37,6 +37,8 @@ class Water_facilities extends MY_Controller {
 
 		$data['water_facilities'] = $this->water_facilities_model->getAll('water_facilities');
 
+		$data['menu'] = "grama-niladhari";
+		$data['submenu'] = "grama-niladhari-water-facility-type";
 		$this->load->view('water_facilities/water_facilities_view', $data);
 
 			}

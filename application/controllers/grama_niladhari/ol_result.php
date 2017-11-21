@@ -41,6 +41,8 @@ class Ol_result extends MY_Controller {
 
 		$data['ol_result'] = $this->ol_result_model->getAll('ol_result');
 
+		$data['menu'] = "grama-niladhari";
+		$data['submenu'] = "grama-niladhari-ol-results";
 		$this->load->view('ol_result/ol_result_view', $data);
 
 			}

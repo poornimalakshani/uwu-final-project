@@ -42,6 +42,8 @@ class Reg_wife extends MY_Controller {
 
 		$data['reg_wife'] = $this->reg_wife_model->getAll('reg_wife');
 
+		$data['menu'] = "midwife";
+		$data['submenu'] = "midwife-reg-wife";
 		$this->load->view('reg_wife/reg_wife_view', $data);
 
 			}

@@ -49,6 +49,8 @@ class Immunization extends MY_Controller {
 
 		$data['immunization'] = $this->immunization_model->getAll('immunization');
 
+		$data['menu'] = "midwife";
+		$data['submenu'] = "midwife-immunization";
 		$this->load->view('immunization/immunization_view', $data);
 
 			}

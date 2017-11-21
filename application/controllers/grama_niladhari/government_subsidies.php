@@ -37,6 +37,8 @@ class Government_subsidies extends MY_Controller {
 
 		$data['government_subsidies'] = $this->government_subsidies_model->getAll('government_subsidies');
 
+		$data['menu'] = "grama-niladhari";
+		$data['submenu'] = "grama-niladhari-subsidies-type";
 		$this->load->view('government_subsidies/government_subsidies_view', $data);
 
 			}

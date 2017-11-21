@@ -37,6 +37,8 @@ class Toilet_facilities extends MY_Controller {
 
 		$data['toilet_facilities'] = $this->toilet_facilities_model->getAll('toilet_facilities');
 
+		$data['menu'] = "grama-niladhari";
+		$data['submenu'] = "grama-niladhari-toilet-type";
 		$this->load->view('toilet_facilities/toilet_facilities_view', $data);
 
 			}

@@ -16,7 +16,9 @@ class OurChart extends CI_Controller
 
 	public function index()
 	{
-		$this->load->view('Chart/Chart_view');
+		$data['menu'] = "charts";
+		$data['submenu'] = "charts-Chart_view";
+		$this->load->view('Chart/Chart_view', $data);
 	}
 
 	public function getdata()

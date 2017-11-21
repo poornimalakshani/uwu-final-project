@@ -30,3 +30,5 @@ $this->load->view('layouts/header');
     </tbody>
   </table>
 </div>
+
+<?php $this->load->view('layouts/footer'); ?>

@@ -47,6 +47,8 @@ class Hear extends MY_Controller {
 
 		$data['hear'] = $this->hear_model->getAll('hear');
 
+		$data['menu'] = "midwife";
+		$data['submenu'] = "midwife-hear";
 		$this->load->view('hear/hear_view', $data);
 
 			}

@@ -1,8 +1,15 @@
-<!DOCTYPE html> 
-  <head> 
-  <title>Have ability to participate Election and Have not ability</title> 
-    <!--Load the AJAX API--> 
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> 
+<?php
+$this->load->view('layouts/header');
+?>
+
+<div class="container">
+    <!--Div that will hold the pie chart-->
+    <h1>Have ability to get Election and Not get Election</h1>
+    <div id="chart_div"></div>
+</div>
+<?php $this->load->view('layouts/footer'); ?>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> 
     <script type="text/javascript"> 
      
@@ -28,16 +35,3 @@
     } 
  
     </script> 
-<style> 
-h1 { 
-    text-align: center; 
-} 
-</style> 
-  </head> 
- 
-  <body> 
-    <!--Div that will hold the pie chart--> 
-    <h1>Have ability to get Election and Not get Election</h1> 
-    <div id="chart_div"></div> 
-  </body> 
-</html> 

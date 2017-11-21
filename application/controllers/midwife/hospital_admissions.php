@@ -45,6 +45,8 @@ class Hospital_admissions extends MY_Controller {
 
 		$data['hospital_admissions'] = $this->hospital_admissions_model->getAll('hospital_admissions');
 
+		$data['menu'] = "midwife";
+		$data['submenu'] = "midwife-hospital";
 		$this->load->view('hospital_admissions/hospital_admissions_view', $data);
 
 			}

@@ -16,7 +16,9 @@ class SubsidiesChart extends CI_Controller
 
 	public function index()
 	{
-		$this->load->view('Chart/Subsidies_Chart_view');
+		$data['menu'] = "charts";
+		$data['submenu'] = "charts-Subsidies_Chart_view";
+		$this->load->view('Chart/Subsidies_Chart_view', $data);
 	}
 
 	public function getdata()

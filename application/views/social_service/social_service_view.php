@@ -1,7 +1,7 @@
 <?php 
 $this->load->view('layouts/header');
 ?>  
-<div class="container">
+
   <h2>Social Service Granters</h2>
   <p>Peoples who grant the social Services:</p>            
   <table class="table table-striped">
@@ -29,4 +29,5 @@ $this->load->view('layouts/header');
       
     </tbody>
   </table>
-</div>
+
+<?php $this->load->view('layouts/footer'); ?>

@@ -39,6 +39,8 @@ class JOb extends MY_Controller {
 
 		$data['job'] = $this->job_model->getAll('job');
 
+		$data['menu'] = "grama-niladhari";
+		$data['submenu'] = "grama-niladhari-jobs";
 		$this->load->view('job/job_view', $data);
 
 			}

@@ -45,6 +45,8 @@ class Pregnent_mother extends MY_Controller {
 
 		$data['pregnent_mother'] = $this->pregnent_mother_model->getAll('pregnent_mother');
 
+		$data['menu'] = "midwife";
+		$data['submenu'] = "midwife-mother";
 		$this->load->view('pregnent_mother/pregnent_mother_view', $data);
 
 			}

@@ -1,5 +1,6 @@
 <?php 
 $this->load->view('layouts/header');
+echo '<div class="login">';
 	echo validation_errors();
     echo form_open(''); //create form for login
 
@@ -20,6 +21,7 @@ $this->load->view('layouts/header');
 
     echo form_submit('submit', 'Login');
     echo form_close('');
+echo '</div>';
 $this->load->view('layouts/footer'); ?>    
 
     

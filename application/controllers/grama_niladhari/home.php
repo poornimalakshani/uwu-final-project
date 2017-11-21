@@ -22,8 +22,10 @@ class Home extends MY_Controller {
 		}
 
 		$data['home'] = $this->home_model->getAll('home');
+		$data['menu'] = "grama-niladhari";
+		$data['submenu'] = "grama-niladhari-home";
 
 		$this->load->view('home/home_view', $data);
 
-			}
-		}
+	}
+}

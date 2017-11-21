@@ -47,6 +47,8 @@ class Vision extends MY_Controller {
 
 		$data['vision'] = $this->vision_model->getAll('vision');
 
+		$data['menu'] = "midwife";
+		$data['submenu'] = "midwife-vision";
 		$this->load->view('vision/vision_view', $data);
 
 			}

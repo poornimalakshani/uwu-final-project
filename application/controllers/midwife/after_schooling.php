@@ -75,6 +75,8 @@ class After_schooling extends MY_Controller {
 
 		$data['after_schooling'] = $this->after_schooling_model->getAll('after_schooling');
 
+		$data['menu'] = "midwife";
+		$data['submenu'] = "midwife-after-schooling";
 		$this->load->view('after_schooling/after_schooling_view', $data);
 
 			}

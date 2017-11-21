@@ -3,7 +3,7 @@ $this->load->view('layouts/header');
 ?>	
 <div class="row">
 <div class="col-md-12">
-<div id="map" style="height: 500px"></div>
+<div id="map" style="height: 600px"></div>
     <script>
       function initMap() {
         var uluru = {lat: 6.613059, lng: 80.605598};

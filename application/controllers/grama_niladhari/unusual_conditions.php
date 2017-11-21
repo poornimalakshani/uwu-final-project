@@ -39,6 +39,8 @@ class Unusual_conditions extends MY_Controller {
 
 		$data['unusual_conditions'] = $this->unusual_conditions_model->getAll('unusual_conditions');
 
+		$data['menu'] = "grama-niladhari";
+		$data['submenu'] = "grama-niladhari-unusual-conditions";
 		$this->load->view('unusual_conditions/unusual_conditions_view', $data);
 
 			}

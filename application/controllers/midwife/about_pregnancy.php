@@ -45,6 +45,8 @@ class About_pregnancy extends MY_Controller {
 
 		$data['about_pregnancy'] = $this->about_pregnancy_model->getAll('about_pregnancy');
 
+		$data['menu'] = "midwife";
+		$data['submenu'] = "midwife-about-pregnancy";
 		$this->load->view('about_pregnancy/about_pregnancy_view', $data);
 
 			}

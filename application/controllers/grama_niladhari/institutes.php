@@ -39,6 +39,8 @@ class Institutes extends MY_Controller {
 
 		$data['institutes'] = $this->institutes_model->getAll('institutes');
 
+		$data['menu'] = "grama-niladhari";
+		$data['submenu'] = "grama-niladhari-institutes";
 		$this->load->view('institutes/institutes_view', $data);
 
 			}

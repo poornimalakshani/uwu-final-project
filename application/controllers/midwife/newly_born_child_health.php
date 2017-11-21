@@ -51,6 +51,8 @@ class Newly_born_child_health extends MY_Controller {
 
 		$data['newly_born_child_health'] = $this->newly_born_child_health_model->getAll('newly_born_child_health');
 
+		$data['menu'] = "midwife";
+		$data['submenu'] = "midwife-child-health";
 		$this->load->view('newly_born_child_health/newly_born_child_health_view', $data);
 
 			}

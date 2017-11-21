@@ -40,6 +40,8 @@ class Grade5Result extends MY_Controller {
 
 		$data['grade5result'] = $this->grade5result_model->getAll('grade5result');
 
+		$data['menu'] = "grama-niladhari";
+		$data['submenu'] = "grama-niladhari-grade-5";
 		$this->load->view('grade5result/grade5result_view', $data);
 
 			}

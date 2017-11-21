@@ -32,6 +32,8 @@ class About_children extends MY_Controller {
 
 		$data['about_children'] = $this->about_children_model->getAll('about_children');
 
+		$data['menu'] = "midwife";
+		$data['submenu'] = "midwife-about-children";
 		$this->load->view('about_children/about_children_view', $data);
 
 			}

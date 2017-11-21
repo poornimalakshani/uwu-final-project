@@ -78,6 +78,8 @@ class Montisoory_children extends MY_Controller {
 
 		$data['montisoory_children'] = $this->montisoory_children_model->getAll('montisoory_children');
 
+		$data['menu'] = "midwife";
+		$data['submenu'] = "midwife-montisoory";
 		$this->load->view('montisoory_children/montisoory_children_view', $data);
 
 			}

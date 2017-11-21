@@ -40,6 +40,8 @@ class Al_result extends MY_Controller {
 
 		$data['al_result'] = $this->al_result_model->getAll('al_result');
 
+		$data['menu'] = "grama-niladhari";
+		$data['submenu'] = "grama-niladhari-al-result";
 		$this->load->view('al_result/al_result_view', $data);
 
 			}

@@ -17,6 +17,7 @@ class List_data extends MY_Controller {
 		}
 
 		$data['list'] = $this->list_model->getAll('list');
+		$data['menu'] = 'settings-list';
 
 		$this->load->view('settings/list_data/index_view', $data);
 	}
@@ -34,6 +35,7 @@ class List_data extends MY_Controller {
 			redirect('/settings/list_data/view/'.$id);
 		}
 		$data['list'] = $this->list_field_model->getByWhere('list_field', 'list_id', $id);
+		$data['menu'] = 'settings-list';
 
 		$this->load->view('settings/list_data/view', $data);
 	}
@@ -57,6 +59,8 @@ class List_data extends MY_Controller {
 			redirect('/settings/list_data');
 		}
 
+		$data['menu'] = 'settings-list';
+		
 		$this->load->view('settings/list_data/edit', $data);
 	}
 
@@ -79,6 +83,7 @@ class List_data extends MY_Controller {
 			redirect('/settings/list_data/view/'.$data['list']->list_id);
 		}
 
+		$data['menu'] = 'settings-list';
 		$this->load->view('settings/list_data/edit_field', $data);
 	}
 
@@ -88,6 +93,7 @@ class List_data extends MY_Controller {
 		$this->load->model('list_field_model');
 		$data['list'] = $this->list_field_model->getByWhere('list_field', 'list_id', $id);
 
+		$data['menu'] = 'settings-list';
 		$this->load->view('settings/list_data/index_view', $data);
 	}
 

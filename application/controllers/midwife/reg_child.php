@@ -50,6 +50,8 @@ class Reg_child extends MY_Controller {
 
 		$data['reg_child'] = $this->reg_child_model->getAll('reg_child');
 
+		$data['menu'] = "midwife";
+		$data['submenu'] = "midwife-reg-child";
 		$this->load->view('reg_child/reg_child_view', $data);
 
 			}

@@ -39,6 +39,8 @@ class Overseas extends MY_Controller {
 
 		$data['overseas'] = $this->overseas_model->getAll('overseas');
 
+		$data['menu'] = "grama-niladhari";
+		$data['submenu'] = "grama-niladhari-overseas";
 		$this->load->view('overseas/overseas_view', $data);
 
 			}

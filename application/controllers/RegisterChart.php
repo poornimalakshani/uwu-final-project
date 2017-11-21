@@ -16,7 +16,9 @@ class RegisterChart extends CI_Controller
 
 	public function index()
 	{
-		$this->load->view('Chart/Register_Chart_view');
+		$data['menu'] = "charts";
+		$data['submenu'] = "charts-Register_Chart_view";
+		$this->load->view('Chart/Register_Chart_view', $data);
 	}
 
 	public function getdata()

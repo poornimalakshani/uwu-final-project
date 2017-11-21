@@ -49,6 +49,8 @@ class Weight_height_bmi extends MY_Controller {
 
 		$data['weight_height_bmi'] = $this->weight_height_bmi_model->getAll('weight_height_bmi');
 
+		$data['menu'] = "midwife";
+		$data['submenu'] = "midwife-bmi";
 		$this->load->view('weight_height_bmi/weight_height_bmi_view', $data);
 
 			}

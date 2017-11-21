@@ -46,6 +46,8 @@ class Development extends MY_Controller {
 
 		$data['development'] = $this->development_model->getAll('development');
 
+		$data['menu'] = "midwife";
+		$data['submenu'] = "midwife-development";
 		$this->load->view('development/development_view', $data);
 
 			}

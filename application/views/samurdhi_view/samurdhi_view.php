@@ -1,7 +1,6 @@
 <?php 
 $this->load->view('layouts/header');
 ?>  
-<div class="container">
   <h2>Samurdhi Granters</h2>
   <p>Peoples who grant the Samurdhi:</p>            
   <table class="table table-striped">
@@ -21,7 +20,6 @@ $this->load->view('layouts/header');
       <tr>
 
         <td><?=$value->id; ?></td>
-        <
         <td><?=$value->address;?></td>
         <td><?=$value->income;?></td>
       </tr>
@@ -29,4 +27,5 @@ $this->load->view('layouts/header');
       
     </tbody>
   </table>
-</div>
+  
+ <?php $this->load->view('layouts/footer'); ?>

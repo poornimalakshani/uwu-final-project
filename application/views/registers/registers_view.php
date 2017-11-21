@@ -1,7 +1,6 @@
 <?php 
 $this->load->view('layouts/header');
 ?>  
-<div class="container">
   <h2>Name Of  New Electoral Register</h2>
   <p>Peoples who register in Electoral Register Newly:</p>            
   <table class="table table-striped">
@@ -29,4 +28,4 @@ $this->load->view('layouts/header');
       
     </tbody>
   </table>
-</div>
+<?php $this->load->view('layouts/footer'); ?>

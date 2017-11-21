@@ -39,6 +39,8 @@ class Vehicles extends MY_Controller {
 
 		$data['vehicles'] = $this->vehicles_model->getAll('vehicles');
 
+		$data['menu'] = "grama-niladhari";
+		$data['submenu'] = "grama-niladhari-vehicles";
 		$this->load->view('vehicles/vehicles_view', $data);
 
 			}

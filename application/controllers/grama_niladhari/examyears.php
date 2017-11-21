@@ -42,6 +42,8 @@ class ExamYears extends MY_Controller {
 
 		$data['examyears'] = $this->examyears_model->getAll('examyears');
 
+		$data['menu'] = "grama-niladhari";
+		$data['submenu'] = "grama-niladhari-exam-years";
 		$this->load->view('examyears/examyears_view', $data);
 
 			}

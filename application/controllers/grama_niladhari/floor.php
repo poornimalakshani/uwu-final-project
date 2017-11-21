@@ -37,6 +37,8 @@ class Floor extends MY_Controller {
 
 		$data['floor'] = $this->floor_model->getAll('floor');
 
+		$data['menu'] = "grama-niladhari";
+		$data['submenu'] = "grama-niladhari-floor-type";
 		$this->load->view('floor/floor_view', $data);
 
 			}

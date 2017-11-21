@@ -1,7 +1,13 @@
-<!DOCTYPE html> 
-  <head> 
-  <title>Subsidies Granters and Non Subsidies Granters</title> 
-    <!--Load the AJAX API--> 
+<?php $this->load->view('layouts/header'); ?>
+
+<div class="container">
+    <!--Div that will hold the pie chart-->
+    <h1>Subsidies Granters and Non Subsidies Granters</h1>
+    <div id="chart_div"></div>
+</div>
+<?php $this->load->view('layouts/footer'); ?>
+
+<!--Load the AJAX API-->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> 
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> 
     <script type="text/javascript"> 
@@ -28,16 +34,3 @@
     } 
  
     </script> 
-<style> 
-h1 { 
-    text-align: center; 
-} 
-</style> 
-  </head> 
- 
-  <body> 
-    <!--Div that will hold the pie chart--> 
-    <h1>Subsidies Granters and Non Subsidies Granters</h1> 
-    <div id="chart_div"></div> 
-  </body> 
-</html> 

@@ -37,6 +37,8 @@ class Roof extends MY_Controller {
 
 		$data['roof'] = $this->roof_model->getAll('roof');
 
+		$data['menu'] = "grama-niladhari";
+		$data['submenu'] = "grama-niladhari-roof-type";
 		$this->load->view('roof/roof_view', $data);
 
 			}

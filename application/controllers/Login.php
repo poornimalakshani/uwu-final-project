@@ -25,6 +25,11 @@ class Login extends CI_Controller {
 		$this->load->view('login/index_view'); // display login form
 	}
 
+	public function logout() {
+		$this->session->unset_userdata('admin');
+		redirect('/');
+	}
+
 	public function _noaccount(){
 		$this->form_validation->set_message('_noaccount', 'Sorry, your username or password incorrect'); // display if username or passward is incorrect
 		return FALSE;

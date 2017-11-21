@@ -38,6 +38,8 @@ class Income extends MY_Controller {
 
 		$data['income'] = $this->income_model->getAll('income');
 
+		$data['menu'] = "grama-niladhari";
+		$data['submenu'] = "grama-niladhari-income";
 		$this->load->view('income/income_view', $data);
 
 			}
