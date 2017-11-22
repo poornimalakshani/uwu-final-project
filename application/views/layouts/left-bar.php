@@ -84,6 +84,14 @@
                 <li <?=(isset($submenu) && $submenu=='charts-Register_Chart_view') ? 'class="active"':''; ?>><a href="/Chart/Register_Chart_view">Who Get Election?</a></li>
                 <li <?=(isset($submenu) && $submenu=='charts-Subsidies_Chart_view') ? 'class="active"':''; ?>><a href="/Chart/Subsidies_Chart_view">All Subsidies Granters?</a></li>
                 <li <?=(isset($submenu) && $submenu=='charts-Malnutrition_Chart_view') ? 'class="active"':''; ?>><a href="/Chart/Malnutrition_Chart_view">Distrinution of Normal, Risk for Malnutrition and Malnutrition?</a></li>
+                  <li <?=(isset($submenu) && $submenu=='charts-income-chart_view') ? 'class="active"':''; ?>><a href="/Chart/income_chart_view">Population based on the Income?</a></li>
+            </ul>
+            <li data-toggle="collapse" data-target="#charts" class="collapsed">
+                <a href="#"><i class="fa fa-bars-chart fa-lg"></i> Charts <span class="arrow"></span></a>
+            </li>
+            <ul class="sub-menu collapse <?=(isset($menu) && $menu=='charts')?'show':''?>" id="charts">
+                
+                  <li <?=(isset($submenu) && $submenu=='charts-income-chart_view') ? 'class="active"':''; ?>><a href="/Chart/income_chart_view">Population based on the Income?</a></li>
             </ul>
             <li>
                 <a href="#">

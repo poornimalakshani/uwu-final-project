@@ -94,3 +94,4 @@ $route['Chart/Chart_view'] = "OurChart/index";
 $route['Chart/Register_Chart_view'] = "RegisterChart/index";
 $route['Chart/Subsidies_Chart_view'] = "SubsidiesChart/index";
 $route['Chart/Malnutrition_Chart_view'] = "MalnutritionChart/index";
+$route['Chart/income_chart_view'] = "income_chart/index";
