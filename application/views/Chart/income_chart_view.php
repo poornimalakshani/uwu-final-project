@@ -7,24 +7,25 @@
       google.charts.load('current', {'packages':['bar']});
       // Set a callback to run when the Google Visualization API is loaded.
       google.charts.setOnLoadCallback(drawChart);
-  
+
     function drawChart() {
-  
+
         $.ajax({
         type: 'POST',
-        url: 'http://localhost/charts/charts/getdata',
-          
+        url: '<?php echo base_url() . 'income_chart/getdata' ?>',
+
         success: function (data1) {
         // Create our data table out of JSON data loaded from server.
         var data = new google.visualization.DataTable();
-  
+
       data.addColumn('string', 'category');
       data.addColumn('number', 'count');
-     
+
       var jsonData = $.parseJSON(data1);
-      
+
+console.log(jsonData)
       for (var i = 0; i < jsonData.length; i++) {
-            data.addRow([jsonData[i].year, parseInt(jsonData[i].sales), parseInt(jsonData[i].expense)]);
+            data.addRow([jsonData[i].category, parseInt(jsonData[i].count)]);
       }
       var options = {
         chart: {
@@ -38,7 +39,7 @@
             0: {side: 'top'}
           }
         }
-         
+
       };
       var chart = new google.charts.Bar(document.getElementById('bar_chart'));
       chart.draw(data, options);
@@ -48,7 +49,7 @@
   </script>
 </head>
 <body>
-  
+
   <div id="bar_chart"></div>
 </body>
 </html>
