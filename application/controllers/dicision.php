@@ -16,7 +16,7 @@ class Dicision extends MY_Controller {
 
 		$data['menu'] = "dicisions";
 		$data['submenu'] = "dicisions-samurdhi-granters";
-   		$this->load->view('samurdhi_view/samurdhi_view', $data);
+   		$this->load->view('dicisions/samurdhi_view', $data);
 
    }
 
@@ -27,7 +27,7 @@ class Dicision extends MY_Controller {
 
 		$data['menu'] = "dicisions";
 		$data['submenu'] = "dicisions-social-service";
-   		$this->load->view('social_service/social_service_view', $data);
+   		$this->load->view('dicisions/social_service_view', $data);
    		
    	}
 
@@ -38,7 +38,7 @@ class Dicision extends MY_Controller {
 
 		$data['menu'] = "dicisions";
 		$data['submenu'] = "dicisions-register";
-   		$this->load->view('newly_registers/newly_registers_view', $data);
+   		$this->load->view('dicisions/newly_registers_view', $data);
    		
    		}
 
@@ -49,7 +49,7 @@ class Dicision extends MY_Controller {
 
 	  $data['menu'] = "dicisions";
 		$data['submenu'] = "dicisions-get-disable-subsidies";
-      $this->load->view('disable_subsidies/disable_subsidies_view', $data);
+      $this->load->view('dicisions/disable_subsidies_view', $data);
       }
 
      public function newly_register(){
@@ -59,7 +59,7 @@ class Dicision extends MY_Controller {
 
 	  $data['menu'] = "dicisions";
 		$data['submenu'] = "dicisions-newly-register";
-      $this->load->view('registers/registers_view', $data);
+      $this->load->view('dicisions/registers_view', $data);
       
       }
 
@@ -70,7 +70,7 @@ class Dicision extends MY_Controller {
 
 		$data['menu'] = "dicisions";
 		$data['submenu'] = "dicisions-percentage-samurdhi-granters";
-		$this->load->view('percentage_samurdhi/percentage_samurdhi_view', $data);
+		$this->load->view('dicisions/percentage_samurdhi_view', $data);
 
    }
 
@@ -81,7 +81,7 @@ class Dicision extends MY_Controller {
 
 		$data['menu'] = "dicisions";
 		$data['submenu'] = "dicisions-not-get-samurdhi";
-		$this->load->view('samurdhi_view/Nonsamurdhi_view', $data);
+		$this->load->view('dicisions/non_samurdhi_view', $data);
 
    }
 
@@ -92,7 +92,7 @@ class Dicision extends MY_Controller {
 
 	  $data['menu'] = "dicisions";
 		$data['submenu'] = "dicisions-get-scholarship-subsidies";
-      $this->load->view('scholarship_granters/scholarship_granters_view', $data);
+      $this->load->view('dicisions/scholarship_granters_view', $data);
 
    }
 
@@ -103,7 +103,7 @@ class Dicision extends MY_Controller {
 
 	  $data['menu'] = "dicisions";
 		$data['submenu'] = "dicisions-focus-on-suwanari-clinic";
-      $this->load->view('suwanariClinic/suwanariClinic_view', $data);
+      $this->load->view('dicisions/suwanari_clinic_view', $data);
 
    }
 
@@ -113,7 +113,7 @@ class Dicision extends MY_Controller {
       $data['LowAgeMarriage'] = $this->reg_wife_model->filterLowAgeMarriages();
 	  $data['menu'] = "dicisions";
 		$data['submenu'] = "dicisions-filter-low-age-marriage";
-      $this->load->view('LowAgeMarriage/LowAgeMarriage_view', $data);
+      $this->load->view('dicisions/low_age_marriage_view', $data);
 
    }
 
@@ -123,7 +123,7 @@ class Dicision extends MY_Controller {
       $data['AforMaths'] = $this->ol_result_model->filterAforMaths();
 	  $data['menu'] = "dicisions";
 		$data['submenu'] = "dicisions-filter_A_for_maths";
-      $this->load->view('AforMaths/AforMaths_view', $data);
+      $this->load->view('dicisions/a_for_maths_view', $data);
 
    }
 
@@ -133,7 +133,7 @@ class Dicision extends MY_Controller {
       $data['socialServiceGranters'] = $this->people1_model->filterSocialServiceGranterPersentage();
 	  $data['menu'] = "dicisions";
 		$data['submenu'] = "dicisions-get_percentage_social_service_granters";
-      $this->load->view('percentage_social_service/percentage_social_service_view', $data);
+      $this->load->view('dicisions/percentage_social_service_view', $data);
 
    }
 
@@ -143,7 +143,7 @@ class Dicision extends MY_Controller {
       $data['averageIncome'] = $this->income_model->filterAverageIncome();
 	  $data['menu'] = "dicisions";
 		$data['submenu'] = "dicisions-get_average_income";
-      $this->load->view('average_income/average_income_view', $data);
+      $this->load->view('dicisions/average_income_view', $data);
 
    }
 
@@ -153,7 +153,7 @@ class Dicision extends MY_Controller {
       $data['AforMathsPercentage'] = $this->ol_result_model->filterAforMathsPercentage();
 	  $data['menu'] = "dicisions";
 		$data['submenu'] = "dicisions-percentage_A_for_maths";
-      $this->load->view('AforMathsPrecentage/AforMathsPercentage_view', $data);
+      $this->load->view('dicisions/a_for_maths_percentage_view', $data);
 
    }
 
@@ -163,7 +163,7 @@ class Dicision extends MY_Controller {
       $data['SubsidiesGrantersPercentage'] = $this->government_subsidies_model->filterSubsidiesGrantersPercentage();
 	  $data['menu'] = "dicisions";
 		$data['submenu'] = "dicisions-percentage_subsidies_granters";
-      $this->load->view('SubsidiesGrantersPercentage/SubsidiesGrantersPercentage_view', $data);
+      $this->load->view('dicisions/subsidies_granters_percentage_view', $data);
 
    }
 
@@ -173,7 +173,7 @@ class Dicision extends MY_Controller {
       $data['PercentageGetElection'] = $this->people1_model->filterPercentageGetElection();
 	  $data['menu'] = "dicisions";
 		$data['submenu'] = "dicisions-percentage_get_election";
-      $this->load->view('PercentageGetElection/PercentageGetElection_view', $data);
+      $this->load->view('dicisions/percentage_get_election_view', $data);
 
    }
     
@@ -183,7 +183,7 @@ class Dicision extends MY_Controller {
       $data['AbilityToDoAL'] = $this->ol_result_model->filterStudents();
 	  $data['menu'] = "dicisions";
 		$data['submenu'] = "dicisions-ability_to_do_AL";
-      $this->load->view('Ability_to_do_AL/Ability_to_do_AL_view', $data);
+      $this->load->view('dicisions/ability_to_do_al_view', $data);
 
    }
 
@@ -193,7 +193,7 @@ class Dicision extends MY_Controller {
       $data['NormalWeightChildren'] = $this->weight_height_bmi_model->filterNormalWeightChildren();
 	  $data['menu'] = "dicisions";
 		$data['submenu'] = "dicisions-get_normal_weight_children";
-      $this->load->view('Normal_weight_children/Normal_weight_children_view', $data);
+      $this->load->view('dicisions/normal_weight_children_view', $data);
 
    }
 
@@ -203,7 +203,7 @@ class Dicision extends MY_Controller {
       $data['RiskWeightChildren'] = $this->weight_height_bmi_model->filterRiskToWeightChildren();
 	  $data['menu'] = "dicisions";
 		$data['submenu'] = "dicisions-get_risk_to_weight_children";
-      $this->load->view('Risk_weight_children/Risk_weight_children_view', $data);
+      $this->load->view('dicisions/risk_weight_children_view', $data);
 
    }
 
@@ -213,7 +213,7 @@ class Dicision extends MY_Controller {
       $data['MalnutritionChildren'] = $this->weight_height_bmi_model->filterMalnutritionChildren();
 	  $data['menu'] = "dicisions";
 		$data['submenu'] = "dicisions-get_malnutrition_children";
-      $this->load->view('Malnutrition_children/Malnutrition_children_view', $data);
+      $this->load->view('dicisions/malnutrition_children_view', $data);
 
    }
 
@@ -224,7 +224,7 @@ class Dicision extends MY_Controller {
 	  
 	  $data['menu'] = "dicisions";
 		$data['submenu'] = "dicisions-get_malnutrition_percentage";
-      $this->load->view('Malnutrition_percentage/Malnutrition_precentage_view', $data);
+      $this->load->view('dicisions/malnutrition_precentage_view', $data);
 
    }
 
