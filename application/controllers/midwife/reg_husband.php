@@ -32,7 +32,6 @@ class Reg_husband extends MY_Controller {
 
 		$data['menu'] = "midwife";
 		$data['submenu'] = "midwife-reg-husband";
-		$this->load->view('reg_husband/reg_husband_view', $data);
-
-			}
-		} 
+		$this->load->view('midwife/reg_husband/reg_husband_view', $data);
+	}
+} 

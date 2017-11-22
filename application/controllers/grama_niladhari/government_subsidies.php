@@ -32,27 +32,22 @@ class Government_subsidies extends MY_Controller {
 			$government_subsidies = $this->government_subsidies_model->insert('government_subsidies', $insert);
 
 			redirect('/grama_niladhari/government_subsidies');
-			
 		}
 
 		$data['government_subsidies'] = $this->government_subsidies_model->getAll('government_subsidies');
 
 		$data['menu'] = "grama-niladhari";
 		$data['submenu'] = "grama-niladhari-subsidies-type";
-		$this->load->view('government_subsidies/government_subsidies_view', $data);
+		$this->load->view('grama_niladhari/government_subsidies/government_subsidies_view', $data);
+	}
 
-			}
-
-			function validate_dropdown($str)
+	function validate_dropdown($str)
     {
-        if ($str == '-CHOOSE-')
-        {
+        if ($str == '-CHOOSE-') {
             //$this->form_validation->set_message('validate_dropdown', 'Please choose a valid %s');
             return FALSE;
-        }
-        else
-        {
+        } else {
             return TRUE;
         }
     }
-		} 
+} 

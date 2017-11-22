@@ -34,29 +34,23 @@ class Ol_result extends MY_Controller {
 				];
 			
 			$ol_result = $this->ol_result_model->insert('ol_result', $insert);
-
 			redirect('/grama_niladhari/ol_result');
-			
 		}
 
 		$data['ol_result'] = $this->ol_result_model->getAll('ol_result');
 
 		$data['menu'] = "grama-niladhari";
 		$data['submenu'] = "grama-niladhari-ol-results";
-		$this->load->view('ol_result/ol_result_view', $data);
+		$this->load->view('grama_niladhari/ol_result/ol_result_view', $data);
+	}
 
-			}
-
-			function validate_dropdown($str)
+	function validate_dropdown($str)
     {
-        if ($str == '-CHOOSE-')
-        {
+        if ($str == '-CHOOSE-') {
             //$this->form_validation->set_message('validate_dropdown', 'Please choose a valid %s');
             return FALSE;
-        }
-        else
-        {
+        } else {
             return TRUE;
         }
     }
-		} 
+} 

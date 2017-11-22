@@ -47,20 +47,16 @@ class Pregnent_mother extends MY_Controller {
 
 		$data['menu'] = "midwife";
 		$data['submenu'] = "midwife-mother";
-		$this->load->view('pregnent_mother/pregnent_mother_view', $data);
+		$this->load->view('midwife/pregnent_mother/pregnent_mother_view', $data);
+	}
 
-			}
-
-			function validate_dropdown($str)
+	function validate_dropdown($str)
     {
-        if ($str == '-CHOOSE-')
-        {
+        if ($str == '-CHOOSE-') {
             //$this->form_validation->set_message('validate_dropdown', 'Please choose a valid %s');
             return FALSE;
-        }
-        else
-        {
+        } else {
             return TRUE;
         }
     }
-		} 
+} 

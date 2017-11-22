@@ -51,20 +51,16 @@ class Weight_height_bmi extends MY_Controller {
 
 		$data['menu'] = "midwife";
 		$data['submenu'] = "midwife-bmi";
-		$this->load->view('weight_height_bmi/weight_height_bmi_view', $data);
+		$this->load->view('midwife/weight_height_bmi/weight_height_bmi_view', $data);
+	}
 
-			}
-
-			function validate_dropdown($str)
+	function validate_dropdown($str)
     {
-        if ($str == '-CHOOSE-')
-        {
+        if ($str == '-CHOOSE-') {
             //$this->form_validation->set_message('validate_dropdown', 'Please choose a valid %s');
             return FALSE;
-        }
-        else
-        {
+        } else {
             return TRUE;
         }
     }
-		} 
+} 

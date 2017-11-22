@@ -47,20 +47,17 @@ class About_pregnancy extends MY_Controller {
 
 		$data['menu'] = "midwife";
 		$data['submenu'] = "midwife-about-pregnancy";
-		$this->load->view('about_pregnancy/about_pregnancy_view', $data);
+		$this->load->view('midwife/about_pregnancy/about_pregnancy_view', $data);
 
-			}
+	}
 
-			function validate_dropdown($str)
+	function validate_dropdown($str)
     {
-        if ($str == '-CHOOSE-')
-        {
+        if ($str == '-CHOOSE-') {
             //$this->form_validation->set_message('validate_dropdown', 'Please choose a valid %s');
             return FALSE;
-        }
-        else
-        {
+        } else {
             return TRUE;
         }
     }
-		} 
+} 

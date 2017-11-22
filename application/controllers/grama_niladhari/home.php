@@ -16,16 +16,13 @@ class Home extends MY_Controller {
 
 		if ($this->form_validation->run() != FALSE) {
 			$home = $this->home_model->insert('home', ['address' => $this->input->post('address'), 'longitude' => $this->input->post( 'longitude'), 'latitude' => $this->input->post('latitude')]); 
-
 			redirect('/grama_niladhari/home');
-			
 		}
 
 		$data['home'] = $this->home_model->getAll('home');
 		$data['menu'] = "grama-niladhari";
 		$data['submenu'] = "grama-niladhari-home";
 
-		$this->load->view('home/home_view', $data);
-
+		$this->load->view('grama_niladhari/home/home_view', $data);
 	}
 }

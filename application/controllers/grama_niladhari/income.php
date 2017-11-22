@@ -31,29 +31,23 @@ class Income extends MY_Controller {
 				];
 			
 			$income = $this->income_model->insert('income', $insert);
-
 			redirect('/grama_niladhari/income');
-			
 		}
 
 		$data['income'] = $this->income_model->getAll('income');
 
 		$data['menu'] = "grama-niladhari";
 		$data['submenu'] = "grama-niladhari-income";
-		$this->load->view('income/income_view', $data);
+		$this->load->view('grama_niladhari/income/income_view', $data);
+	}
 
-			}
-
-			function validate_dropdown($str)
+	function validate_dropdown($str)
     {
-        if ($str == '-CHOOSE-')
-        {
+        if ($str == '-CHOOSE-') {
             //$this->form_validation->set_message('validate_dropdown', 'Please choose a valid %s');
             return FALSE;
-        }
-        else
-        {
+        } else {
             return TRUE;
         }
     }
-		} 
+} 

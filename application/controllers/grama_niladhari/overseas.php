@@ -32,29 +32,23 @@ class Overseas extends MY_Controller {
 				];
 			
 			$overseas = $this->overseas_model->insert('overseas', $insert);
-
 			redirect('/grama_niladhari/overseas');
-			
 		}
 
 		$data['overseas'] = $this->overseas_model->getAll('overseas');
 
 		$data['menu'] = "grama-niladhari";
 		$data['submenu'] = "grama-niladhari-overseas";
-		$this->load->view('overseas/overseas_view', $data);
+		$this->load->view('grama_niladhari/overseas/overseas_view', $data);
+	}
 
-			}
-
-			function validate_dropdown($str)
+	function validate_dropdown($str)
     {
-        if ($str == '-CHOOSE-')
-        {
+        if ($str == '-CHOOSE-') {
             //$this->form_validation->set_message('validate_dropdown', 'Please choose a valid %s');
             return FALSE;
-        }
-        else
-        {
+        } else {
             return TRUE;
         }
     }
-		} 
+} 

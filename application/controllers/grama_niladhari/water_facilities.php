@@ -39,20 +39,17 @@ class Water_facilities extends MY_Controller {
 
 		$data['menu'] = "grama-niladhari";
 		$data['submenu'] = "grama-niladhari-water-facility-type";
-		$this->load->view('water_facilities/water_facilities_view', $data);
+		$this->load->view('grama_niladhari/water_facilities/water_facilities_view', $data);
 
-			}
+	}
 
-			function validate_dropdown($str)
+	function validate_dropdown($str)
     {
-        if ($str == '-CHOOSE-')
-        {
+        if ($str == '-CHOOSE-') {
             //$this->form_validation->set_message('validate_dropdown', 'Please choose a valid %s');
             return FALSE;
-        }
-        else
-        {
+        } else {
             return TRUE;
         }
     }
-		} 
+} 

@@ -53,20 +53,16 @@ class Newly_born_child_health extends MY_Controller {
 
 		$data['menu'] = "midwife";
 		$data['submenu'] = "midwife-child-health";
-		$this->load->view('newly_born_child_health/newly_born_child_health_view', $data);
+		$this->load->view('midwife/newly_born_child_health/newly_born_child_health_view', $data);
+	}
 
-			}
-
-			function validate_dropdown($str)
+	function validate_dropdown($str)
     {
-        if ($str == '-CHOOSE-')
-        {
+        if ($str == '-CHOOSE-') {
             //$this->form_validation->set_message('validate_dropdown', 'Please choose a valid %s');
             return FALSE;
-        }
-        else
-        {
+        } else {
             return TRUE;
         }
     }
-		} 
+} 

@@ -41,20 +41,17 @@ class Unusual_conditions extends MY_Controller {
 
 		$data['menu'] = "grama-niladhari";
 		$data['submenu'] = "grama-niladhari-unusual-conditions";
-		$this->load->view('unusual_conditions/unusual_conditions_view', $data);
+		$this->load->view('grama_niladhari/unusual_conditions/unusual_conditions_view', $data);
 
-			}
+	}
 
-			function validate_dropdown($str)
+	function validate_dropdown($str)
     {
-        if ($str == '-CHOOSE-')
-        {
+        if ($str == '-CHOOSE-') {
             //$this->form_validation->set_message('validate_dropdown', 'Please choose a valid %s');
             return FALSE;
-        }
-        else
-        {
+        } else {
             return TRUE;
         }
     }
-		} 
+} 

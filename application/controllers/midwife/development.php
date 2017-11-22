@@ -48,20 +48,16 @@ class Development extends MY_Controller {
 
 		$data['menu'] = "midwife";
 		$data['submenu'] = "midwife-development";
-		$this->load->view('development/development_view', $data);
+		$this->load->view('midwife/development/development_view', $data);
+	}
 
-			}
-
-			function validate_dropdown($str)
+	function validate_dropdown($str)
     {
-        if ($str == '-CHOOSE-')
-        {
+        if ($str == '-CHOOSE-') {
             //$this->form_validation->set_message('validate_dropdown', 'Please choose a valid %s');
             return FALSE;
-        }
-        else
-        {
+        } else {
             return TRUE;
         }
     }
-		} 
+} 

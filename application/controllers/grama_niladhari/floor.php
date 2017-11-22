@@ -15,7 +15,6 @@ class Floor extends MY_Controller {
 
 	public function index()
 	{
-
 		$data['field_list'] = $this->floor_model->getCategory();
 		//$data = array();
 		//$this->load->model('people1_model');
@@ -30,29 +29,24 @@ class Floor extends MY_Controller {
 			];
 			
 			$floor = $this->floor_model->insert('floor', $insert);
-
 			redirect('/grama_niladhari/floor');
-			
 		}
 
 		$data['floor'] = $this->floor_model->getAll('floor');
 
 		$data['menu'] = "grama-niladhari";
 		$data['submenu'] = "grama-niladhari-floor-type";
-		$this->load->view('floor/floor_view', $data);
+		$this->load->view('grama_niladhari/floor/floor_view', $data);
 
-			}
+	}
 
-			function validate_dropdown($str)
+	function validate_dropdown($str)
     {
-        if ($str == '-CHOOSE-')
-        {
+        if ($str == '-CHOOSE-') {
             //$this->form_validation->set_message('validate_dropdown', 'Please choose a valid %s');
             return FALSE;
-        }
-        else
-        {
+        } else {
             return TRUE;
         }
     }
-		} 
+} 

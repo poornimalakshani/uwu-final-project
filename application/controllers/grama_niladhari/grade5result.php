@@ -15,7 +15,6 @@ class Grade5Result extends MY_Controller {
 
 	public function index()
 	{
-
 		$data['field_list'] = $this->grade5result_model->getCategory();
 		//$data = array();
 		//$this->load->model('people1_model');
@@ -33,29 +32,24 @@ class Grade5Result extends MY_Controller {
 			];
 			
 			$grade5result = $this->grade5result_model->insert('grade5result', $insert);
-
 			redirect('/grama_niladhari/grade5result');
-			
 		}
 
 		$data['grade5result'] = $this->grade5result_model->getAll('grade5result');
 
 		$data['menu'] = "grama-niladhari";
 		$data['submenu'] = "grama-niladhari-grade-5";
-		$this->load->view('grade5result/grade5result_view', $data);
+		$this->load->view('grama_niladhari/grade5result/grade5result_view', $data);
 
-			}
+	}
 
-			function validate_dropdown($str)
+	function validate_dropdown($str)
     {
-        if ($str == '-CHOOSE-')
-        {
+        if ($str == '-CHOOSE-') {
             //$this->form_validation->set_message('validate_dropdown', 'Please choose a valid %s');
             return FALSE;
-        }
-        else
-        {
+        } else {
             return TRUE;
         }
     }
-		} 
+} 

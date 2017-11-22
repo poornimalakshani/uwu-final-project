@@ -30,29 +30,23 @@ class Roof extends MY_Controller {
 			];
 			
 			$roof = $this->roof_model->insert('roof', $insert);
-
 			redirect('/grama_niladhari/roof');
-			
 		}
 
 		$data['roof'] = $this->roof_model->getAll('roof');
 
 		$data['menu'] = "grama-niladhari";
 		$data['submenu'] = "grama-niladhari-roof-type";
-		$this->load->view('roof/roof_view', $data);
+		$this->load->view('grama_niladhari/roof/roof_view', $data);
+	}
 
-			}
-
-			function validate_dropdown($str)
+	function validate_dropdown($str)
     {
-        if ($str == '-CHOOSE-')
-        {
+        if ($str == '-CHOOSE-') {
             //$this->form_validation->set_message('validate_dropdown', 'Please choose a valid %s');
             return FALSE;
-        }
-        else
-        {
+        } else {
             return TRUE;
         }
     }
-		} 
+} 

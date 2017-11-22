@@ -32,29 +32,23 @@ class JOb extends MY_Controller {
 				];
 			
 			$job = $this->job_model->insert('job', $insert);
-
 			redirect('/grama_niladhari/job');
-			
 		}
 
 		$data['job'] = $this->job_model->getAll('job');
 
 		$data['menu'] = "grama-niladhari";
 		$data['submenu'] = "grama-niladhari-jobs";
-		$this->load->view('job/job_view', $data);
+		$this->load->view('grama_niladhari/job/job_view', $data);
+	}
 
-			}
-
-			function validate_dropdown($str)
+	function validate_dropdown($str)
     {
-        if ($str == '-CHOOSE-')
-        {
+        if ($str == '-CHOOSE-') {
             //$this->form_validation->set_message('validate_dropdown', 'Please choose a valid %s');
             return FALSE;
-        }
-        else
-        {
+        } else {
             return TRUE;
         }
     }
-		} 
+} 

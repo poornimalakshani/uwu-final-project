@@ -42,9 +42,7 @@ class People1 extends MY_Controller {
 			];
 			
 			$people1 = $this->people1_model->insert('people', $insert);
-
 			redirect('/grama_niladhari/people1');
-			
 		}
 
 		$data['people1'] = $this->people1_model->getAll('people');
@@ -52,20 +50,16 @@ class People1 extends MY_Controller {
 		$data['menu'] = "grama-niladhari";
 		$data['submenu'] = "grama-niladhari-people";
 
-		$this->load->view('people/people_view1', $data);
+		$this->load->view('grama_niladhari/people/people_view1', $data);
+	}
 
-			}
-
-			function validate_dropdown($str)
+	function validate_dropdown($str)
     {
-        if ($str == '-CHOOSE-')
-        {
+        if ($str == '-CHOOSE-') {
             //$this->form_validation->set_message('validate_dropdown', 'Please choose a valid %s');
             return FALSE;
-        }
-        else
-        {
+        } else {
             return TRUE;
         }
     }
-		} 
+} 
