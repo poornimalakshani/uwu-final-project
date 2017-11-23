@@ -124,27 +124,4 @@ class Al_result extends MY_Controller {
 		}
 		
 	}
-/*
-	public function index()
-	{
-		//$data = array();
-		//$this->load->model('al_result_model');
-		$data['field_list'] = $this->al_result_model->getCategory();
-
-
-
-		if ($this->form_validation->run() != FALSE) {
-
-
-			$al_result = $this->al_result_model->insert('al_result', $insert);
-			redirect('/grama_niladhari/al_result');
-		}
-
-		$data['al_result'] = $this->al_result_model->getAll('al_result');
-
-		
-		
-
-	}
-*/
 }

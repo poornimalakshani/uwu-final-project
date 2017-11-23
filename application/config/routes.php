@@ -69,6 +69,7 @@ $route['grama_niladhari/al_result/(:any)'] = "grama_niladhari/al_result/index/$1
 
 $route['grama_niladhari/(:any)/add_edit/(:any)'] = "grama_niladhari/$1/add_edit/$2";
 $route['grama_niladhari/(:any)/delete/(:any)'] = "grama_niladhari/$1/delete/$2";
+$route['grama_niladhari/(:any)/(:any)/(:any)'] = "grama_niladhari/$1/index/$2/$3";
 $route['grama_niladhari/(:any)/(:any)'] = "grama_niladhari/$1/index/$2";
 
 
