@@ -1,6 +1,6 @@
-<?php 
+<?php
 $this->load->view('layouts/header');
-?>	
+?>
 <div class="row">
 	<div class="col-md-12">
 	<h4>Settings List</h4>
@@ -42,7 +42,7 @@ $this->load->view('layouts/header');
     </div>
 </div>
 
-<?php $this->load->view('layouts/footer'); ?>    
+<?php $this->load->view('layouts/footer'); ?>
 
 <script type="text/javascript">
 $(document).ready(function() {

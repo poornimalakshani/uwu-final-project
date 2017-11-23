@@ -13,7 +13,7 @@ class People1 extends MY_Controller {
     }
 
 
-	public function index()
+	public function index($homeId = 0)
 	{
 
 		$data['field_list'] = $this->people1_model->getCategory();
@@ -51,6 +51,10 @@ class People1 extends MY_Controller {
 		$data['submenu'] = "grama-niladhari-people";
 
 		$this->load->view('grama_niladhari/people/people_view1', $data);
+	}
+
+	public function add_edit($peopleId = 0) {
+
 	}
 
 	function validate_dropdown($str)

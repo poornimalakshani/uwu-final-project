@@ -57,6 +57,12 @@ $route['settings/list_data/view/(:any)'] = "settings/list_data/view/$1";
 $route['settings/list_data/edit/(:any)'] = "settings/list_data/edit/$1";
 $route['settings/list_data/delete/(:any)'] = "settings/list_data/delete/$1";
 $route['settings/list_data/edit_filed/(:any)'] = "settings/list_data/edit_filed/$1";
+
+$route['grama_niladhari/people1/add_edit/(:any)'] = "grama_niladhari/people1/add_edit/$1";
+$route['grama_niladhari/people1/(:any)'] = "grama_niladhari/people1/index/$1";
+
+
+
 $route['home/home_view'] = "home/home_view";
 $route['people/people_view1'] = "people/people_view1";
 $route['reg_wife/reg_wife_view'] = "reg_wife/reg_wife_view";

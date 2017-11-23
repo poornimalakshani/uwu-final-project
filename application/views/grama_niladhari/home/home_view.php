@@ -1,71 +1,31 @@
+<?php $this->load->view('layouts/header'); ?>
 
-<?php 
-$this->load->view('layouts/header');
-?>  
-
-<div class="container">
-        <?php
-           echo validation_errors();
-            echo form_open('');
-           /* echo form_input(array(
-                'type' => 'text',
-                'name' => 'id',
-                'value' => set_value('id')
-                ));
-            
-            echo form_input(array(
-                'type' => 'text',
-                'name' => 'address',
-                'value' => set_value('address')
-            ));
-
-            echo form_input(array(
-                'type' => 'double',
-                'name' => 'longitude',
-                'value' => set_value('longitude')
-            ));
-
-            echo form_input(array(
-                'type' => 'doubless',
-                'name' => 'latitude',
-                'value' => set_value('latitude')
-            ));*/
-
-             echo form_label('Address :');
-             echo form_input(array(
-                'name'          => 'address',
-                'id'            => 'address',
-                'value'         => set_value('address'),
-                'maxlength'     => '100'
-                //'size'          => '50',
-                //'style'         => 'width:50%'
-            )); 
-             echo "</br>";
-             //echo form_input(array('id' => 'address', 'name' => 'address'));
-
-             echo form_label('Longitude :');
-             echo form_input(array(
-                'name' => 'longitude',
-                'id' => 'longitude',
-                'value' => set_value('longitude')
-            )); 
-             echo "</br>";
-             //echo form_input(array('id' => 'longitude', 'name' => 'longitude'));
-
-             echo form_label('Latitude :');
-             echo form_input(array(
-                'name' => 'latitude',
-                'id' => 'latitude',
-                'value' => set_value('latitude')
-            )); 
-             echo "</br>";
-             //echo form_input(array('id' => 'latitude', 'name' => 'latitude'));
-
-            echo form_submit('submit', 'Save');
-            echo form_close('');
-        ?>
-
+<div class="row">
+	<div class="col-md-12">
+	<h4>Home List <span class="pull-right"><small><a href="/grama_niladhari/home/add_edit" data-type="add" class="btn btn-success add-edit">Add New</a></small></span></h4>
+	</div>
+	<div class="col-md-12">
+		<table class="table table-striped">
+			<tbody>
+		    <?php foreach($home as $x) { ?>
+				<tr>
+					<td><a href="/grama_niladhari/people1/<?=$x->id?>"><?=$x->address?></a></td>
+					<td align="right">
+						<a class="action" href="/grama_niladhari/people1/<?=$x->id?>"><i class="fa fa-eye fa-lg"></i></a>
+						<a class="action add-edit" data-type="edit" href="/grama_niladhari/home/add_edit/<?=$x->id?>"><i class="fa fa-pencil fa-lg"></i></a>
+						<a class="action delete" href="/grama_niladhari/home/delete/<?=$x->id?>"><i class="fa fa-trash fa-lg"></i></a>
+					</td>
+				</tr>
+			<?php } ?>
+			</tbody>
+		</table>
     </div>
 </div>
 
+<?php $this->load->view('layouts/dialog'); ?>
+
 <?php $this->load->view('layouts/footer'); ?>    
+
+<script type="text/javascript">
+pageName = "Home";
+</script>
