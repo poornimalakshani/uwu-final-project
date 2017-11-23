@@ -15,13 +15,30 @@
           center: uluru
         });
 
+		/* now inside your initialise function */
+		infowindow = new google.maps.InfoWindow({
+			content: "holding..."
+		});
+
         <?php
         foreach ($homeLocation as $key => $value) {?>
           var uluru = {lat: <?=$value->longitude; ?>, lng: <?=$value->latitude; ?>};
+
           var marker = new google.maps.Marker({
             position: uluru,
-            map: map
+            map: map,
           });
+
+		  var content = "<p><?=$value->address; ?></p>";
+		  content += "<a href=\"/grama_niladhari/home\">View</a>";
+		  google.maps.event.addListener(marker, 'click',
+				function(event)
+				{
+					infowindow.setContent(content);
+					infowindow.open(map, this);
+				}
+			);
+
         <?php }
         ?>
         
