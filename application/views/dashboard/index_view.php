@@ -1,6 +1,9 @@
-<?php 
-$this->load->view('layouts/header');
-?>	
+<?php $this->load->view('layouts/header'); ?>
+<style>
+.main-container {
+	padding: 0px;
+}
+</style>
 <div class="row">
 <div class="col-md-12">
 <div id="map" style="height: 600px"></div>

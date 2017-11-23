@@ -112,7 +112,41 @@
 	padding-top: 87px;
 	min-height: 650px;
 }
-
+.main-container {
+	padding: 20px;
+	font-size: 13px;
+}
+.main-container a {
+	font-size: 13px;
+}
+.main-container a.action {
+	padding: 0 10px;
+}
+.main-container h4 {
+	border-bottom: 1px solid #eee;
+	padding-bottom: 10px;
+}
+.main-container .error-text {
+	margin-bottom: 10px;
+}
+.popup-message {
+	font-weight: bold;
+	padding: 10px;
+}
+.popup-message.bg-success:before {
+	font-family: FontAwesome;
+    content: "\f00c";
+	padding-right: 10px;
+}
+.popup-message.bg-danger:before {
+	font-family: FontAwesome;
+    content: "\f00d";
+	padding-right: 10px;
+}
+.main-container .error-text p {
+	padding: 10px;
+	margin-bottom: 0px;
+}
 .login {
 	margin: 200px auto;
 	width: 400px;

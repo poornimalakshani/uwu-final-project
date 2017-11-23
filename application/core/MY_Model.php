@@ -16,6 +16,14 @@ class MY_Model extends CI_Model {
 	{
 		$this->db->where($where, $where_id);
 		$this->db->update($table_name, $update);
+
+		return TRUE;
+	}
+
+	public function delete($table_name, $where, $where_id)
+	{
+		$this->db->where($where, $where_id);
+		$this->db->delete($table_name);
 		
 		return TRUE;
 	}

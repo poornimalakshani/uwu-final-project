@@ -16,6 +16,11 @@
 	<?php $this->load->view('layouts/left-bar'); ?>
 
 	<div class="container" <?=($this->session->userdata('admin') ? 'id="main"': '')?>>
+		<div>
+			<div class="col-md-12 popup-message text-white" id="popup-message" style="display: none">
+			</div>
+		</div>
 		<div class="row">
 			<div class="col-md-12">
+				<div class="main-container">
 
