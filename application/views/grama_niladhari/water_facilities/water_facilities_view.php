@@ -46,7 +46,7 @@
 <?php $this->load->view('layouts/footer'); ?>   
 
 <script type="text/javascript">
-pageName = "Floor Type";
+pageName = "Water Facility Type";
 
 $(document).ready(function() {
 	$('#home-select').on('change', function(e) {
