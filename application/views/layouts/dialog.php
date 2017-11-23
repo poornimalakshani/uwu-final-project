@@ -13,7 +13,6 @@ $(document).ready(function() {
 		height: 'auto',
 		width: 'auto',
 		modal: true,
-		autoResize:true,
 		buttons: {
 
 		},
@@ -84,7 +83,7 @@ function addEditAction() {
 		dataType: 'html',
 		data: $( "#dialog-form" ).find( "form" ).serialize(),
 		success: function(result) {
-			if (result === 'success') {
+			if (result === 'success' || result === 'reload') {
 				window.location.href = window.location;
 			} else {
 				$( "#dialog-form" ).html(result);

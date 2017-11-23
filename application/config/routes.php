@@ -59,7 +59,17 @@ $route['settings/list_data/delete/(:any)'] = "settings/list_data/delete/$1";
 $route['settings/list_data/edit_filed/(:any)'] = "settings/list_data/edit_filed/$1";
 
 $route['grama_niladhari/people1/add_edit/(:any)'] = "grama_niladhari/people1/add_edit/$1";
+$route['grama_niladhari/people1/delete/(:any)'] = "grama_niladhari/people1/delete/$1";
 $route['grama_niladhari/people1/(:any)'] = "grama_niladhari/people1/index/$1";
+
+$route['grama_niladhari/al_result/add_edit/(:any)'] = "grama_niladhari/al_result/add_edit/$1";
+$route['grama_niladhari/al_result/delete/(:any)'] = "grama_niladhari/al_result/delete/$1";
+$route['grama_niladhari/al_result/(:any)/(:any)'] = "grama_niladhari/al_result/index/$1/$2";
+$route['grama_niladhari/al_result/(:any)'] = "grama_niladhari/al_result/index/$1";
+
+$route['grama_niladhari/(:any)/add_edit/(:any)'] = "grama_niladhari/$1/add_edit/$2";
+$route['grama_niladhari/(:any)/delete/(:any)'] = "grama_niladhari/$1/delete/$2";
+$route['grama_niladhari/(:any)/(:any)'] = "grama_niladhari/$1/index/$2";
 
 
 

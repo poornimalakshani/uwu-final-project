@@ -28,8 +28,12 @@ class MY_Model extends CI_Model {
 		return TRUE;
 	}
 
-	public function getAll($table_name)
+	public function getAll($table_name, $orderBy = '')
 	{
+		if (!empty($orderBy)) {
+			$this->db->order_by($orderBy);
+		}
+
 		$result = $this->db->get($table_name);
 
 		if ($result->num_rows() > 0) {
@@ -39,9 +43,14 @@ class MY_Model extends CI_Model {
 		
 	}
 
-	public function getByWhere($table_name, $where, $where_val, $is_first_row = false)
+	public function getByWhere($table_name, $where, $where_val, $is_first_row = false, $orderBy = '')
 	{
 		$this->db->where($where, $where_val);
+
+		if (!$is_first_row && !empty($orderBy)) {
+			$this->db->order_by($orderBy);
+		}
+
 		$result = $this->db->get($table_name);
 
 		if ($result->num_rows() > 0) {

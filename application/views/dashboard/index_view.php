@@ -30,7 +30,7 @@
           });
 
 		  var content = "<p><?=$value->address; ?></p>";
-		  content += "<a href=\"/grama_niladhari/home\">View</a>";
+		  content += "<a href=\"/grama_niladhari/people1/<?=$value->id; ?>\">View</a>";
 		  google.maps.event.addListener(marker, 'click',
 				function(event)
 				{

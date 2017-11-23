@@ -1,84 +1,90 @@
-<?php 
-$this->load->view('layouts/header');
-?>  
+<?php $this->load->view('layouts/header'); ?>
 
-<div class="container">
-        <?php
-        echo validation_errors();
-        echo form_open('');
+<div class="row">
+	<div class="col-md-12">
+	<h4>
+		A/L Results <?=(!empty($peopleId)) ? 'of '.$people->fullName : '' ?>
+		<?php if(!empty($peopleId)) { ?>
+		<span class="pull-right"><small><a href="/grama_niladhari/al_result/add_edit/<?=$homeId?>/<?=$peopleId?>" data-type="add" class="btn btn-success add-edit">Add New</a></small></span>
+		<?php } ?>
+	</h4>
+	</div>
+	<div class="col-md-12">
+		<div class="form-group">
+			<select class="form-control" id="home-select">
+				<option value="0">-- Select Home --</option>
 
-            echo form_label('Subject ');
+				<?php foreach($home as $x) { ?>
+				<option value="<?=$x->id?>" <?=($x->id == $homeId) ? 'selected="selected"': ''; ?>><?=$x->address?></option>
+				<?php } ?>
+			</select>
+		</div>
 
-             $data=array(
-                    '290' => 'Combined Maths',
-                    '291'   => 'Physics',
-                    '292' => 'Chemistry',
-                    '293' => 'Information And Communication Technology',
-                    '294' => 'Biology',
-                    '295' => 'Agricultural Science',
-                    '296' => 'Accounting',
-                    '297' => 'Economics',
-                    '298' => 'Bussiness Studies',
-                    '299' => 'Information Technology',
-                    '300' => 'Engineering Technology',
-                    '301' => 'Bio System Technology',
-                    '302' => 'Science For Technology',
-                    '303' => 'Art',
-                    '304' => 'Music',
-                    '305' => 'Dancing',
-                    '306' => 'Languages',
-                    '307' => 'Logic',
-                    '308' => 'Media',
-                    '322' => 'General English',
-                    '323' => 'Genaral Knowledge',
-                    '327' => 'Sinhala',
-                    '328' => 'Geography'
-                    );
-             echo form_dropdown('subject', $data, 'Combined Maths');
-             echo "</br>";
+		<div class="form-group">
+			<select class="form-control" id="people-select">
+				<option value="0">-- Select People --</option>
 
-             echo form_label('Result:');
+				<?php if(!empty($peopleList)) {
+					foreach($peopleList as $x) { ?>
+				<option value="<?=$x->id?>" <?=($x->id == $peopleId) ? 'selected="selected"': ''; ?>><?=$x->fullName?></option>
+				<?php }
+				} ?>
+			</select>
+		</div>
 
-             $data=array(
-             		'name' => 'result',
-             		'id'   => 'result',
-             		'value' => ''
-             	);
-             echo form_input($data);
-             echo "</br>";
-
-            
-
-            echo form_label('People_Id:');
-
-             $data=array(
-                    'name' => 'people_id',
-                    'id'   => 'people_id',
-                    'value' => ''
-                );
-             
-             echo form_input($data);
-             echo "</br>";
-
-
-             echo form_label('Home_Id:');
-
-             $data=array(
-                    'name' => 'people_home_id',
-                    'id'   => 'people_home_id'
-                );
-             
-             echo form_input($data);
-             echo "</br>";
-
-             echo form_submit('submit', 'Save');
-            echo form_close('');
-        ?>
-
+		<?php if(empty($alResults)) { ?>
+			<p class="text-warning"><?=(empty($peopleId) ? 'Please Select A People!' : 'Sorry, No A/L Results!')?></p>
+		<?php } else { ?>
+		<table class="table table-striped">
+			<tbody>
+		    <?php foreach($alResults as $x) { ?>
+				<tr>
+					<td><?=$subjects[$x->subject]?></td>
+					<td><?=$x->result?></td>
+					<td align="right">
+						<a class="action add-edit" data-type="edit" href="/grama_niladhari/al_result/add_edit/<?=$homeId?>/<?=$peopleId?>/<?=$x->id?>"><i class="fa fa-pencil fa-lg"></i></a>
+						<a class="action delete" href="/grama_niladhari/al_result/delete/<?=$x->id?>"><i class="fa fa-trash fa-lg"></i></a>
+					</td>
+				</tr>
+			<?php } ?>
+			</tbody>
+		</table>
+		<?php } ?>
     </div>
 </div>
 
+<?php $this->load->view('layouts/dialog'); ?>
+
 <?php $this->load->view('layouts/footer'); ?>   
 
+<script type="text/javascript">
+pageName = "A/ L Result";
 
+$(document).ready(function() {
+	$('#home-select').on('change', function(e) {
+		e.preventDefault();
 
+		var urlPart = $('#home-select').val();
+		if (urlPart) {
+			if ($('#people-select').val() > 0) {
+				urlPart += '/' + $('#people-select').val();
+			}
+		}
+
+		window.location.href = "/grama_niladhari/al_result/"+urlPart;
+	});
+
+	$('#people-select').on('change', function(e) {
+		e.preventDefault();
+
+		var urlPart = $('#home-select').val();
+		if (urlPart) {
+			if ($('#people-select').val() > 0) {
+				urlPart += '/' + $('#people-select').val();
+			}
+		}
+
+		window.location.href = "/grama_niladhari/al_result/" + urlPart;
+	});
+});
+</script>
