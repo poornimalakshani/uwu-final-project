@@ -1,6 +1,4 @@
-<?php 
-$this->load->view('layouts/header');
-?>  
+<?php $this->load->view('layouts/header'); ?>
 
 <div class="row">
 	<div class="col-md-12">
