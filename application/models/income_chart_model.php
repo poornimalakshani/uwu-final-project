@@ -36,15 +36,15 @@ class income_chart_model extends CI_Model {
         $this->db->from("income");
         $this->db->where("income between 40000 and 50000");
         $query = $this->db->get();
-        $query3 = $this->db->last_query();
+        $query4 = $this->db->last_query();
 
         $this->db->select("'Very High Income' as category, count(*) as count");
         $this->db->from("income");
         $this->db->where("income > 500000");
         $query = $this->db->get();
-        $query4 = $this->db->last_query();
+        $query5 = $this->db->last_query();
 
-        $query = $this->db->query($query1." UNION ".$query2. " UNION ".$query3." UNION ".$query4  );
+        $query = $this->db->query($query1." UNION ".$query2. " UNION ".$query3." UNION ".$query4." UNION ".$query4);
 
     return $query->result();
 

@@ -112,3 +112,4 @@ $route['Chart/Register_Chart_view'] = "RegisterChart/index";
 $route['Chart/Subsidies_Chart_view'] = "SubsidiesChart/index";
 $route['Chart/Malnutrition_Chart_view'] = "MalnutritionChart/index";
 $route['Chart/income_chart_view'] = "income_chart/index";
+$route['Chart/age_chart_view'] = "age_chart/index";
