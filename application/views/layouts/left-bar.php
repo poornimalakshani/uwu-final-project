@@ -102,7 +102,7 @@ if($admin) {
 
 			<?php if($userType == 'superadmin') { ?>
 				<li data-toggle="collapse" data-target="#manage-users" class="collapsed">
-					<a href="#"><i class="fa fa-pie-chart fa-lg"></i> Manage Users <span class="arrow"></span></a>
+					<a href="#"><i class="fa fa-users fa-lg"></i> Manage Users <span class="arrow"></span></a>
 				</li>
 				<ul class="sub-menu collapse <?=(isset($menu) && $menu=='profile_manager')?'show':''?>" id="manage-users">
 					<li <?=(isset($submenu) && $submenu=='user_list') ? 'class="active"':''; ?>><a href="/user_manager">User List</a></li>
