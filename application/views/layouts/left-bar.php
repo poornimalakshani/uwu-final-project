@@ -86,8 +86,8 @@
                 <li <?=(isset($submenu) && $submenu=='charts-Malnutrition_Chart_view') ? 'class="active"':''; ?>><a href="/Chart/Malnutrition_Chart_view">Distrinution of Normal, Risk for Malnutrition and Malnutrition?</a></li>
                 <li <?=(isset($submenu) && $submenu=='charts-income-chart_view') ? 'class="active"':''; ?>><a href="/Chart/income_chart_view">Population based on the Income?</a></li>
             </ul>
-            <li>
-                <a href="#">
+            <li <?=(isset($menu) && $menu=='profile_manager') ? 'class="active"':''; ?>>
+                <a href="/user_manager/profile">
                     <i class="fa fa-user fa-lg"></i> Profile
                 </a>
             </li>
