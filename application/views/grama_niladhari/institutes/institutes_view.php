@@ -1,66 +1,84 @@
-<?php 
-$this->load->view('layouts/header');
-?>  
+<?php $this->load->view('layouts/header'); ?>
 
-<div class="container">
-        <?php
-        echo validation_errors();
-        echo form_open('');
+<div class="row">
+	<div class="col-md-12">
+	<h4>
+		Institutes <?=(!empty($peopleId)) ? 'of '.$people->fullName : '' ?>
+		<?php if(!empty($peopleId)) { ?>
+		<span class="pull-right"><small><a href="/grama_niladhari/institutes/add_edit/<?=$homeId?>/<?=$peopleId?>" data-type="add" class="btn btn-success add-edit">Add New</a></small></span>
+		<?php } ?>
+	</h4>
+	</div>
+	<div class="col-md-12">
+		<div class="form-group">
+			<select class="form-control" id="home-select">
+				<option value="0">-- Select Home --</option>
 
-             echo form_label('Institute Type:');
+				<?php foreach($home as $x) { ?>
+				<option value="<?=$x->id?>" <?=($x->id == $homeId) ? 'selected="selected"': ''; ?>><?=$x->address?></option>
+				<?php } ?>
+			</select>
+		</div>
 
-             $data=array(
-                    '60'   => 'Hunuwala Dharmaraja MV',
-                    '61'   => 'Opanayaka Vidyakara MV',
-                    '62'   => 'Gankanda MMV',
-                    '63'   => 'Dandeniya MV ',
-                    '64'   => 'Mahinda VIdyalaya',
-                    '65'   => 'UWU',
-                    '66'   => 'Jayawadhanapura University',
-                    '67'   => 'Colombo University',
-                    '68'   => 'Sabaragamuwa University',
-                    '69'   => 'Rajarata University',
-                    '70'   => 'Kelaniya University',
-                    '71'   => 'Peradeniya University',
-                    '72'   => 'Wayaba University',
-                    '73'   => 'NorthEast University',
-                    '74'   => 'Easten Universuty',
-                    '75'   => 'Moratuwa University',
-                    '66'   => 'Teaching Collage',
-                    '330'   => 'Vidyaloka MV'
-                    );
-             echo form_dropdown('type', $data, 'Hunuwala Dharmaraja MV');
-             echo "</br>";
-            
+		<div class="form-group">
+			<select class="form-control" id="people-select">
+				<option value="0">-- Select People --</option>
 
-             echo form_label('People Id:');
-             $data=array(
-                    'name' => 'people_id',
-                    'id'   => 'people_id',
-                    'value' => ''
-                );
-             echo form_input($data);
-             echo "</br>";
-             
-              echo form_label('Home_Id:');
+				<?php if(!empty($peopleList)) {
+					foreach($peopleList as $x) { ?>
+				<option value="<?=$x->id?>" <?=($x->id == $peopleId) ? 'selected="selected"': ''; ?>><?=$x->fullName?></option>
+				<?php }
+				} ?>
+			</select>
+		</div>
 
-             $data=array(
-                    'name' => 'people_home_id',
-                    'id'   => 'people_home_id',
-                    'value' => ''
-                );
-             
-             echo form_input($data);
-             echo "</br>";
-             
-             echo form_submit('submit', 'Save');
-            echo form_close('');
-        ?>
-
+		<?php if(empty($institutes)) { ?>
+			<p class="text-warning"><?=(empty($peopleId) ? 'Please Select A People!' : 'Sorry, No Institutes Found!')?></p>
+		<?php } else { ?>
+		<table class="table table-striped">
+			<tbody>
+		    <?php foreach($institutes as $x) { ?>
+				<tr>
+					<td><?=$instituteTypes[$x->type]?></td>
+					<td align="right">
+						<a class="action add-edit" data-type="edit" href="/grama_niladhari/institutes/add_edit/<?=$homeId?>/<?=$peopleId?>/<?=$x->id?>"><i class="fa fa-pencil fa-lg"></i></a>
+						<a class="action delete" href="/grama_niladhari/institutes/delete/<?=$x->id?>"><i class="fa fa-trash fa-lg"></i></a>
+					</td>
+				</tr>
+			<?php } ?>
+			</tbody>
+		</table>
+		<?php } ?>
     </div>
 </div>
 
-<?php $this->load->view('layouts/footer'); ?>   
+<?php $this->load->view('layouts/dialog'); ?>
 
+<?php $this->load->view('layouts/footer'); ?>
 
+<script type="text/javascript">
+pageName = "Institute";
 
+$(document).ready(function() {
+	$('#home-select').on('change', function(e) {
+		e.preventDefault();
+
+		var urlPart = $('#home-select').val();
+
+		window.location.href = "/grama_niladhari/institutes/"+urlPart;
+	});
+
+	$('#people-select').on('change', function(e) {
+		e.preventDefault();
+
+		var urlPart = $('#home-select').val();
+		if (urlPart) {
+			if ($('#people-select').val() > 0) {
+				urlPart += '/' + $('#people-select').val();
+			}
+		}
+
+		window.location.href = "/grama_niladhari/institutes/" + urlPart;
+	});
+});
+</script>
