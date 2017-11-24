@@ -58,7 +58,7 @@
 <?php $this->load->view('layouts/footer'); ?>   
 
 <script type="text/javascript">
-pageName = "Vehicle Type";
+pageName = "A/ L Results";
 
 $(document).ready(function() {
 	$('#home-select').on('change', function(e) {
