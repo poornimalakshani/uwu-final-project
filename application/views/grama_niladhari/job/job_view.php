@@ -1,68 +1,86 @@
-<?php 
-$this->load->view('layouts/header');
-?>  
+<?php $this->load->view('layouts/header'); ?>
 
-<div class="container">
-        <?php
-        echo validation_errors();
-        echo form_open('');
+<div class="row">
+	<div class="col-md-12">
+	<h4>
+		Job <?=(!empty($peopleId)) ? 'of '.$people->fullName : '' ?>
+		<?php if(!empty($peopleId)) { ?>
+		<span class="pull-right"><small><a href="/grama_niladhari/job/add_edit/<?=$homeId?>/<?=$peopleId?>" data-type="add" class="btn btn-success add-edit">Add New</a></small></span>
+		<?php } ?>
+	</h4>
+	</div>
+	<div class="col-md-12">
+		<div class="form-group">
+			<select class="form-control" id="home-select">
+				<option value="0">-- Select Home --</option>
 
-             echo form_label('Job Type:');
+				<?php foreach($home as $x) { ?>
+				<option value="<?=$x->id?>" <?=($x->id == $homeId) ? 'selected="selected"': ''; ?>><?=$x->address?></option>
+				<?php } ?>
+			</select>
+		</div>
 
-             $data=array(
-                    '22'   => 'Teacher',
-                    '23'   => 'Doctor',
-                    '24'   => 'Software Engineer',
-                    '25'   => 'Nurse',
-                    '26'   => 'Engineer',
-                    '27'   => 'Accountant',
-                    '28'   => 'Clerk',
-                    '29'   => 'Business',
-                    '30'   => 'Masonary',
-                    '31'   => 'Carpentry',
-                    '32'   => 'Garment',
-                    '33'   => 'Garaj',
-                    '34'   => 'Driver',
-                    '35'   => 'Conductor',
-                    '36'   => 'Army',
-                    '37'   => 'Navy',
-                    '38'   => 'Air Force',
-                    '39'   => 'Police',
-                    '40'   => 'Overseas',
-                    '226'   => 'Labour'
-                    );
-             echo form_dropdown('type', $data, 'Teacher');
-             echo "</br>";
-            
+		<div class="form-group">
+			<select class="form-control" id="people-select">
+				<option value="0">-- Select People --</option>
 
-             echo form_label('People Id:');
-             $data=array(
-                    'name' => 'people_id',
-                    'id'   => 'people_id',
-                    'value' => ''
-                );
-             echo form_input($data);
-             echo "</br>";
-             
-              echo form_label('Home_Id:');
+				<?php if(!empty($peopleList)) {
+					foreach($peopleList as $x) { ?>
+				<option value="<?=$x->id?>" <?=($x->id == $peopleId) ? 'selected="selected"': ''; ?>><?=$x->fullName?></option>
+				<?php }
+				} ?>
+			</select>
+		</div>
 
-             $data=array(
-                    'name' => 'people_home_id',
-                    'id'   => 'people_home_id',
-                    'value' => ''
-                );
-             
-             echo form_input($data);
-             echo "</br>";
-             
-             echo form_submit('submit', 'Save');
-            echo form_close('');
-        ?>
-
+		<?php if(empty($job)) { ?>
+			<p class="text-warning"><?=(empty($peopleId) ? 'Please Select A People!' : 'Sorry, No Job Found!')?></p>
+		<?php } else { ?>
+		<table class="table table-striped">
+			<tbody>
+		    <?php foreach($job as $x) { ?>
+				<?php if(isset($jobTypes[$x->type])) { ?>
+				<tr>
+					<td><?=$jobTypes[$x->type]?></td>
+					<td align="right">
+						<a class="action add-edit" data-type="edit" href="/grama_niladhari/job/add_edit/<?=$homeId?>/<?=$peopleId?>/<?=$x->id?>"><i class="fa fa-pencil fa-lg"></i></a>
+						<a class="action delete" href="/grama_niladhari/job/delete/<?=$x->id?>"><i class="fa fa-trash fa-lg"></i></a>
+					</td>
+				</tr>
+				<?php } ?>
+			<?php } ?>
+			</tbody>
+		</table>
+		<?php } ?>
     </div>
 </div>
 
-<?php $this->load->view('layouts/footer'); ?>   
+<?php $this->load->view('layouts/dialog'); ?>
 
+<?php $this->load->view('layouts/footer'); ?>
 
+<script type="text/javascript">
+pageName = "Job Type";
 
+$(document).ready(function() {
+	$('#home-select').on('change', function(e) {
+		e.preventDefault();
+
+		var urlPart = $('#home-select').val();
+
+		window.location.href = "/grama_niladhari/job/"+urlPart;
+	});
+
+	$('#people-select').on('change', function(e) {
+		e.preventDefault();
+
+		var urlPart = $('#home-select').val();
+		if (urlPart) {
+			if ($('#people-select').val() > 0) {
+				urlPart += '/' + $('#people-select').val();
+			}
+		}
+
+		window.location.href = "/grama_niladhari/job/" + urlPart;
+	});
+});
+</script>
