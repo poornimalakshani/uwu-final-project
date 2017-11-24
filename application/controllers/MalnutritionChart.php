@@ -84,22 +84,22 @@ class MalnutritionChart extends CI_Controller
 				$data = $this->Malnutrition_chart_model->get_malnutrition();
 
 			//data to json
-			$responce->cols[] = array(
+			    $responce->cols[] = array(
 				"id" => "",
 				"label" => "Topping",
 				"pattern" => "",
 				"type" => "string"
-			);
+				);
             
-			$responce->cols[] = array(
+				$responce->cols[] = array(
 				"id" => "",
 				"label" => "Total",
 				"pattern" => "",
 				"type" => "number"
-			);
+				);
             
-			foreach($data as $cd) {
-				$responce->rows[]["c"] = array(
+				foreach($data as $cd) {
+					$responce->rows[]["c"] = array(
 					array(
 						"v" => "Get Malnutrition",
 						"f" => null
@@ -108,12 +108,14 @@ class MalnutritionChart extends CI_Controller
 						"v" => (int)$cd->malnutrition_children,
 						"f" => null
 					)
-				);
-			}
+					);
+			    }
 
-			echo json_encode($responce);
-		}
+				
+		    }
+		    
+		} 
+		echo json_encode($responce); 
+		
 	}
-}
-
 }
