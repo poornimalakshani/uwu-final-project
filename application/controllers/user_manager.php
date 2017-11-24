@@ -115,7 +115,7 @@ class User_Manager extends MY_Controller {
             ];
 
             if ($this->input->post('password')) {
-                $update['password'] = md5($this->input->post('password'));
+                $ins['password'] = md5($this->input->post('password'));
             }
 
 			if ($adminId == 0) {
