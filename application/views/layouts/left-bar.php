@@ -1,4 +1,17 @@
-<?php if($this->session->userdata('admin')) { ?>
+<?php
+$admin = $this->session->userdata('admin');
+if($admin) {
+	$userType = '';
+	if ($admin->type == 309) {
+		$userType = 'superadmin';
+	} else if ($admin->type == 310) {
+		$userType = 'admin';
+	} else if ($admin->type == 311) {
+		$userType = 'grama_niladhari';
+	} else if ($admin->type == 312) {
+		$userType = 'midwife';
+	}
+?>
 <div class="nav-side-menu navbar-inverse bg-inverse">
     <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
     <div class="menu-list">
@@ -86,11 +99,22 @@
                 <li <?=(isset($submenu) && $submenu=='charts-Malnutrition_Chart_view') ? 'class="active"':''; ?>><a href="/Chart/Malnutrition_Chart_view">Distrinution of Normal, Risk for Malnutrition and Malnutrition?</a></li>
                 <li <?=(isset($submenu) && $submenu=='charts-income-chart_view') ? 'class="active"':''; ?>><a href="/Chart/income_chart_view">Population based on the Income?</a></li>
             </ul>
+
+			<?php if($userType == 'superadmin') { ?>
+				<li data-toggle="collapse" data-target="#manage-users" class="collapsed">
+					<a href="#"><i class="fa fa-pie-chart fa-lg"></i> Manage Users <span class="arrow"></span></a>
+				</li>
+				<ul class="sub-menu collapse <?=(isset($menu) && $menu=='profile_manager')?'show':''?>" id="manage-users">
+					<li <?=(isset($submenu) && $submenu=='user_list') ? 'class="active"':''; ?>><a href="/user_manager">User List</a></li>
+					<li <?=(isset($submenu) && $submenu=='my_profile') ? 'class="active"':''; ?>><a href="/user_manager/profile">My Profile</a></li>
+				</ul>
+			<?php } else { ?>
             <li <?=(isset($menu) && $menu=='profile_manager') ? 'class="active"':''; ?>>
                 <a href="/user_manager/profile">
                     <i class="fa fa-user fa-lg"></i> Profile
                 </a>
             </li>
+			<?php } ?>
             <li>
                 <a href="/login/logout">
                     <i class="fa fa-sign-out fa-lg"></i> Logout
