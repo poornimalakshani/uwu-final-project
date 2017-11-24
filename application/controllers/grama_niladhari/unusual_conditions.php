@@ -122,5 +122,4 @@ class Unusual_conditions extends MY_Controller {
 		}
 
 	}
-
 } 

@@ -64,11 +64,6 @@ $(document).ready(function() {
 		e.preventDefault();
 
 		var urlPart = $('#home-select').val();
-		if (urlPart) {
-			if ($('#people-select').val() > 0) {
-				urlPart += '/' + $('#people-select').val();
-			}
-		}
 
 		window.location.href = "/grama_niladhari/vehicles/"+urlPart;
 	});
