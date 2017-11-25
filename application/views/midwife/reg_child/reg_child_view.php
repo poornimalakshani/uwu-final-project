@@ -1,109 +1,98 @@
-<?php 
-$this->load->view('layouts/header');
-?>  
+<?php $this->load->view('layouts/header'); ?>
 
-<div class="container">
-        <?php
-        echo validation_errors();
-        echo form_open('');
+<div class="row">
+	<div class="col-md-12">
+	<h4>
+		Child Registration
+		<?php if(!empty($regWifeId)) { ?>
+		<span class="pull-right"><small><a href="/midwife/reg_child/add_edit/<?=$homeId?>/<?=$regWifeId?>" data-type="add" class="btn btn-success add-edit">Add New</a></small></span>
+		<?php } ?>
+	</h4>
+	</div>
+	<div class="col-md-12">
+		<div class="form-group">
+			<select class="form-control" id="home-select">
+				<option value="0">-- Select Home --</option>
 
-             
+				<?php foreach($home as $x) { ?>
+				<option value="<?=$x->id?>" <?=($x->id == $homeId) ? 'selected="selected"': ''; ?>><?=$x->address?></option>
+				<?php } ?>
+			</select>
+		</div>
 
-             echo form_label('Birth Weight:');
+		<div class="form-group">
+			<select class="form-control" id="people-select">
+				<option value="0">-- Select Registed Wife --</option>
 
-             $data=array(
-                    'name' => 'birth_weight',
-                    'id'   => 'birth_weight',
-                    'value' => ''
-                );
-             echo form_input($data);
-             echo "</br>";
+				<?php if(!empty($regWifeList)) {
+					foreach($regWifeList as $x) { ?>
+				<option value="<?=$x->id?>" <?=($x->id == $regWifeId) ? 'selected="selected"': ''; ?>><?=$x->fullName?></option>
+				<?php }
+				} ?>
+			</select>
+		</div>
 
-             echo form_label('Length at Birth:');
-
-             $data=array(
-                    'name' => 'length_at_birth',
-                    'id'   => 'length_at_birth',
-                    'value' => ''
-                );
-             echo form_input($data);
-             echo "</br>";
-
-             echo form_label('Size of Head at Birth:');
-
-             $data=array(
-                    'name' => 'size_of_head_at_birth',
-                    'id'   => 'size_of_head_at_birth',
-                    'value' => ''
-                );
-             echo form_input($data);
-             echo "</br>";
-
-             echo form_label('Health Condition');
-
-             $data=array(
-                    '88' => 'Normal',
-                    '89'   => 'Premature Birth',
-                    '90' => 'Low Weight',
-                    '91' => 'Neonatal Competition',
-                    '92' => 'Congenital Disabilities',
-                    '93' => 'Difficulty Of Breastfeeding',
-                    '94' => 'Mother/Father Death',
-                    '95' => 'Mother/Father Separation/Foreign Travel'
-                    );
-             echo form_dropdown('health_condition', $data, 'Normal');
-             echo "</br>";
-             
-            echo form_label('Mother Registration Id:');
-
-             $data=array(
-                    'name' => 'reg_wife_id',
-                    'id'   => 'reg_wife_id',
-                    'value' => ''
-                );
-             
-             echo form_input($data);
-             echo "</br>";
-
-             echo form_label('Mother People Id:');
-
-             $data=array(
-                    'name' => 'reg_wife_people_id',
-                    'id'   => 'reg_wife_people_id',
-                    'value' => ''
-                );
-             
-             echo form_input($data);
-             echo "</br>";
-
-             echo form_label('Mother Home Id:');
-
-             $data=array(
-                    'name' => 'reg_wife_people_home_id',
-                    'id'   => 'reg_wife_people_home_id'
-                );
-             
-             echo form_input($data);
-             echo "</br>";
-
-              echo form_label('People Id:');
-
-             $data=array(
-                    'name' => 'people_id',
-                    'id'   => 'people_id',
-                    'value' => ''
-                );
-             echo form_input($data);
-             echo "</br>";
-
-             echo form_submit('submit', 'Save');
-            echo form_close('');
-        ?>
-
+		<?php if(empty($regChild)) { ?>
+			<p class="text-warning"><?=(empty($regWifeId) ? 'Please Select A Registed Wife!' : 'Sorry, No Registed Child!')?></p>
+		<?php } else { ?>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Birth Weight</th>
+					<th>Length at Birth</th>
+					<th>Size of Head at Birth</th>
+					<th>Health Condition</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+		    <?php foreach($regChild as $x) { ?>
+				<tr>
+					<td><?=$x->fullName?></td>
+					<td><?=$x->birth_weight?></td>
+					<td><?=$x->length_at_birth?></td>
+					<td><?=$x->size_of_head_at_birth?></td>
+					<td><?=($x->health_condition) ? $healthCondition[$x->health_condition] : ''?></td>
+					<td align="right">
+						<a class="action add-edit" data-type="edit" href="/midwife/reg_child/add_edit/<?=$homeId?>/<?=$regWifeId?>/<?=$x->peopleId?>/<?=$x->regChildId?>"><i class="fa fa-pencil fa-lg"></i></a>
+						<a class="action delete" href="/midwife/reg_child/delete/<?=$x->regChildId?>"><i class="fa fa-trash fa-lg"></i></a>
+					</td>
+				</tr>
+			<?php } ?>
+			</tbody>
+		</table>
+		<?php } ?>
     </div>
 </div>
 
+<?php $this->load->view('layouts/dialog'); ?>
+
 <?php $this->load->view('layouts/footer'); ?>   
 
+<script type="text/javascript">
+pageName = "Child Registration";
 
+$(document).ready(function() {
+	$('#home-select').on('change', function(e) {
+		e.preventDefault();
 
+		var urlPart = $('#home-select').val();
+
+		window.location.href = "/midwife/reg_child/"+urlPart;
+	});
+
+	$('#people-select').on('change', function(e) {
+		e.preventDefault();
+
+		var urlPart = $('#home-select').val();
+		if (urlPart) {
+			if ($('#people-select').val() > 0) {
+				urlPart += '/' + $('#people-select').val();
+			}
+		}
+
+		window.location.href = "/midwife/reg_child/" + urlPart;
+	});
+});
+</script>
