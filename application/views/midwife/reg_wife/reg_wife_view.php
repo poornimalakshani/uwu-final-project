@@ -60,13 +60,13 @@
 			</tbody>
 		</table>
 		<?php } ?>
-		
+
     </div>
 </div>
 
 <?php $this->load->view('layouts/dialog'); ?>
 
-<?php $this->load->view('layouts/footer'); ?>   
+<?php $this->load->view('layouts/footer'); ?>
 
 <script type="text/javascript">
 pageName = "Register Wife";

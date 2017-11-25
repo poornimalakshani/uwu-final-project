@@ -1,134 +1,95 @@
-<?php 
-$this->load->view('layouts/header');
-?>  
+<?php $this->load->view('layouts/header'); ?>
 
-<div class="container">
-        <?php
-        echo validation_errors();
-        echo form_open('');
+<div class="row">
+	<div class="col-md-12">
+	<h4>
+		Weight Height BMI
+		<?php if(!empty($regChildId)) { ?>
+		<span class="pull-right"><small><a href="/midwife/weight_height_bmi/add_edit/<?=$homeId?>/<?=$regChildId?>" data-type="add" class="btn btn-success add-edit">Add New</a></small></span>
+		<?php } ?>
+	</h4>
+	</div>
+	<div class="col-md-12">
+		<div class="form-group">
+			<select class="form-control" id="home-select">
+				<option value="0">-- Select Home --</option>
 
-             echo form_label('Age:');
+				<?php foreach($home as $x) { ?>
+				<option value="<?=$x->id?>" <?=($x->id == $homeId) ? 'selected="selected"': ''; ?>><?=$x->address?></option>
+				<?php } ?>
+			</select>
+		</div>
 
-             $data=array(
-                    '100'   => '1st Month',
-                    '101'   => '2nd Month',
-                    '102'   => '3rd Month',
-                    '103'   => '4th Month',
-                    '104'   => '5th Month',
-                    '105'   => '6th Month',
-                    '106'   => '7th Month',
-                    '107'   => '8th Month',
-                    '108'   => '9th Month',
-                    '109'   => '10th Month',
-                    '110'   => '11th Month',
-                    '111'   => '12th Month',
-                    '112'   => '13th Month',
-                    '113'   => '14th Month',
-                    '114'   => '15th Month',
-                    '115'   => '16th Month',
-                    '116'   => '17th Month',
-                    '117'   => '18th Month',
-                    '118'   => '19th Month',
-                    '119'   => '20th Month',
-                    '120'   => '21th Month',
-                    '121'   => '22th Month',
-                    '122'   => '23th Month',
-                    '123'   => '24th Month',
-                    '124'   => '27th Month',
-                    '125'   => '30th Month',
-                    '126'   => '33th Month',
-                    '127'   => '36th Month',
-                    '128'   => '39th Month',
-                    '129'   => '42th Month',
-                    '130'   => '45th Month',
-                    '131'   => '48th Month',
-                    '132'   => '51th Month',
-                    '133'   => '54th Month',
-                    '134'   => '57th Month',
-                    '135'   => '69th Month'
-                     );
-             echo form_dropdown('age_duration', $data, '1st Month');
-             echo "</br>";
-            
+		<div class="form-group">
+			<select class="form-control" id="reg-child-select">
+				<option value="0">-- Select Child --</option>
 
-             echo form_label('Height:');
+				<?php foreach($regChild as $x) { ?>
+				<option value="<?=$x->regChildId?>" <?=($x->regChildId == $regChildId) ? 'selected="selected"': ''; ?>><?=$x->fullName?></option>
+				<?php } ?>
+			</select>
+		</div>
 
-             $data=array(
-             		'name' => 'height',
-             		'id'   => 'height',
-             		'value' => ''
-             	);
-             echo form_input($data);
-             echo "</br>";
-             
-
-             echo form_label('Weight:');
-
-             $data=array(
-             		'name' => 'weight',
-             		'id'   => 'weight',
-             		'value' => ''
-             	);
-             echo form_input($data);
-             echo "</br>";
-
-              echo form_label('BMI:');
-
-             $data=array(
-                    'name' => 'bmi',
-                    'id'   => 'bmi',
-                    'value' => ''
-                );
-             echo form_input($data);
-             echo "</br>";
-             
-              echo form_label('Child Id:');
-
-             $data=array(
-                    'name' => 'reg_child_id',
-                    'id'   => 'reg_child_id',
-                    'value' => ''
-                );
-             echo form_input($data);
-             echo "</br>";
-
-             echo form_label('Mother Id:');
-             $data=array(
-                    'name' => 'reg_child_reg_wife_id',
-                    'id'   => 'reg_child_reg_wife_id',
-                    'value' => ''
-                );
-             echo form_input($data);
-             echo "</br>";
-
-             echo form_label('Mother People Id:');
-             $data=array(
-                    'name' => 'reg_child_reg_wife_people_id',
-                    'id'   => 'reg_child_reg_wife_people_id',
-                    'value' => ''
-                );
-             echo form_input($data);
-             echo "</br>";
-             
-              echo form_label('Home_Id:');
-
-             $data=array(
-                    'name' => 'reg_child_reg_wife_people_home_id',
-                    'id'   => 'reg_child_reg_wife_people_home_id',
-                    'value' => ''
-                );
-             
-             echo form_input($data);
-             echo "</br>";
-             
-             echo form_submit('submit', 'Save');
-            echo form_close('');
-        ?>
+		<?php if(empty($weightHeightBmi)) { ?>
+			<p class="text-warning">Sorry, No Weight Height Found!</p>
+		<?php } else { ?>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Age Duration</th>
+					<th>Weight</th>
+					<th>Height</th>
+					<th>BMI</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+		    <?php foreach($weightHeightBmi as $x) { ?>
+				<tr>
+					<td><?=(isset($ageDuration[$x->age_duration])) ? $ageDuration[$x->age_duration] : ''?></td>
+					<td><?=$x->height?></td>
+					<td><?=$x->weight?></td>
+					<td><?=$x->bmi?></td>
+					<td align="right">
+						<a class="action add-edit" data-type="edit" href="/midwife/weight_height_bmi/add_edit/<?=$homeId?>/<?=$regChildId?>/<?=$x->id?>"><i class="fa fa-pencil fa-lg"></i></a>
+						<a class="action delete" href="/midwife/weight_height_bmi/delete/<?=$x->id?>"><i class="fa fa-trash fa-lg"></i></a>
+					</td>
+				</tr>
+			<?php } ?>
+			</tbody>
+		</table>
+		<?php } ?>
 
     </div>
 </div>
 
+<?php $this->load->view('layouts/dialog'); ?>
+
 <?php $this->load->view('layouts/footer'); ?>   
 
+<script type="text/javascript">
+pageName = "Weight Height BMI";
 
+$(document).ready(function() {
+	$('#home-select').on('change', function(e) {
+		e.preventDefault();
 
+		var urlPart = $('#home-select').val();
+
+		window.location.href = "/midwife/weight_height_bmi/"+urlPart;
+	});
+
+	$('#reg-child-select').on('change', function(e) {
+		e.preventDefault();
+
+		var urlPart = $('#home-select').val();
+		if (urlPart) {
+			if ($('#reg-child-select').val() > 0) {
+				urlPart += '/' + $('#reg-child-select').val();
+			}
+		}
+
+		window.location.href = "/midwife/weight_height_bmi/" + urlPart;
+	});
+});
+</script>
