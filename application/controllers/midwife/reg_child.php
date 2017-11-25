@@ -125,28 +125,28 @@ class Reg_child extends MY_Controller {
 		$this->load->view('midwife/reg_child/add_edit_view', $data);
 	}
 
-	public function delete($alResultId = 0)
+	public function delete($regChildId = 0)
 	{
-		$data['alResult'] = $this->reg_child_model->getByWhere('reg_child', 'id', $alResultId, TRUE);
+		$data['regChild'] = $this->reg_child_model->getByWhere('reg_child', 'id', $regChildId, TRUE);
 
 		$homeId = '';
 		$regWifeId = '';
-		if ($data['alResult']) {
-			$this->reg_child_model->delete('reg_child', 'id', $alResultId);
+		if ($data['regChild']) {
+			$this->reg_child_model->delete('reg_child', 'id', $regChildId);
 
 			$this->session->set_flashdata('popup_message', [
 				'type' => 'success',
-				'message' => 'A/L Result Deleted!'
+				'message' => 'Registed Chiled Deleted!'
 			]);
 
-			$regWifeId = $data['alResult']->people_id;
-			$homeId = $data['alResult']->people_home_id;
+			$regWifeId = $data['regChild']->reg_wife_id;
+			$homeId = $data['regChild']->reg_wife_people_home_id;
 
 			redirect('/midwife/reg_child/'.$homeId.'/'.$regWifeId);
 		} else {
 			$this->session->set_flashdata('popup_message', [
 				'type' => 'danger',
-				'message' => 'Sorry, No A/L Result Found!'
+				'message' => 'Sorry, No Registed Chiled Found!'
 			]);
 
 			redirect('/midwife/reg_child/');
