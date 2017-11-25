@@ -8,6 +8,7 @@ class reg_wife_model extends MY_Model {
 
 	public function getFemaleListOfHome($homeId)
 	{
+		$this->db->select('*, people.id AS peopleId, people.home_id AS peopleHomeId');
 		$this->db->where('home_id', $homeId);
 		$this->db->where('gender', 2);
 

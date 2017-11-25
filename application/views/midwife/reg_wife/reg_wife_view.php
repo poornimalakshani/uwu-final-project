@@ -47,9 +47,9 @@
 							</button>
 							<ul class="dropdown-menu action">
 								<?php if (empty($x->age_in_marriage)) { ?>
-								<li><a class="action add-edit" data-type="add" href="/midwife/reg_wife/add_edit/<?=$homeId?>/<?=$x->people_id?>">Register</a></li>
+								<li><a class="action add-edit" data-type="add" href="/midwife/reg_wife/add_edit/<?=$homeId?>/<?=$x->peopleId?>">Register</a></li>
 								<?php } else { ?>
-								<li><a class="action add-edit" data-type="edit" href="/midwife/reg_wife/add_edit/<?=$homeId?>/<?=$x->people_id?>/<?=$x->id?>">Edit Registed Wife</a></li>
+								<li><a class="action add-edit" data-type="edit" href="/midwife/reg_wife/add_edit/<?=$homeId?>/<?=$x->peopleId?>/<?=$x->id?>">Edit Registed Wife</a></li>
 								<li><a class="action delete" href="/midwife/reg_wife/delete/<?=$x->id?>">Delete Registed Wife</a></li>
 								<?php } ?>
 							</ul>
