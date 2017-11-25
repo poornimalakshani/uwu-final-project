@@ -4,9 +4,6 @@
 	<div class="col-md-12">
 	<h4>
 		About Children
-		<?php if(!empty($homeId)) { ?>
-		<!--<span class="pull-right"><small><a href="/midwife/about_children/add_edit/<?=$homeId?>" data-type="add" class="btn btn-success add-edit">Add New</a></small></span>-->
-		<?php } ?>
 	</h4>
 	</div>
 	<div class="col-md-12">
