@@ -6,6 +6,21 @@ class reg_wife_model extends MY_Model {
 		parent::__construct();
 	}
 
+	public function getFemaleListOfHome($homeId)
+	{
+		$this->db->where('home_id', $homeId);
+		$this->db->where('gender', 2);
+
+		$this->db->join('reg_wife', 'reg_wife.people_id = people.id', 'left');
+
+		$result = $this->db->get('people');
+
+		if ($result->num_rows() > 0) {
+			return $result->result();
+		}
+		return FALSE;
+	}
+
 	function getCategory()
     {
         $query = $this->db->get('list_field');

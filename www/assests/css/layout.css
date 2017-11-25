@@ -160,7 +160,20 @@
 	z-index: 10000 !important;
 	min-width: 500px !important;
 }
-
+.dropdown-menu.action {
+	right: 0px;
+	left: auto;
+}
+.dropdown-menu.action li a {
+	display: block;
+	padding: 5px 10px;
+}
+.dropdown-menu.action li:hover {
+	background-color: #eeeeee;
+}
+.dropdown-menu.action li a:hover {
+	text-decoration: none;
+}
 @media (max-width: 767px) {
   .nav-side-menu {
     position: relative;
