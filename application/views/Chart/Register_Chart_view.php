@@ -1,12 +1,14 @@
-<?php
-$this->load->view('layouts/header');
-?>
+<?php $this->load->view('layouts/header'); ?>
 
-<div class="container">
-    <!--Div that will hold the pie chart-->
-    <h1>Have ability to get Election and Not get Election</h1>
-    <div id="chart_div"></div>
+<div class="row">
+	<div class="col-md-12">
+		<h4>Have ability to get Election and Not get Election</h4>
+	</div>
+	<div class="col-md-12">
+		<div id="chart_div"></div>
+	</div>
 </div>
+
 <?php $this->load->view('layouts/footer'); ?>
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>

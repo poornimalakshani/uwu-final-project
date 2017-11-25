@@ -1,12 +1,14 @@
-<?php
-$this->load->view('layouts/header');
-?>
+<?php $this->load->view('layouts/header'); ?>
 
-<div class="container">
-    <!--Div that will hold the pie chart--> 
-    <h1>Samurdhi Granters and Non Samurdhi Granters</h1> 
-    <div id="chart_div"></div> 
+<div class="row">
+	<div class="col-md-12">
+		<h4>Samurdhi Granters and Non Samurdhi Granters</h4>
+	</div>
+	<div class="col-md-12">
+		<div id="chart_div"></div>
+	</div>
 </div>
+
 <?php $this->load->view('layouts/footer'); ?>
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>

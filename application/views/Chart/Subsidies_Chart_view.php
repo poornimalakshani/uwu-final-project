@@ -1,10 +1,14 @@
 <?php $this->load->view('layouts/header'); ?>
 
-<div class="container">
-    <!--Div that will hold the pie chart-->
-    <h1>Subsidies Granters and Non Subsidies Granters</h1>
-    <div id="chart_div"></div>
+<div class="row">
+	<div class="col-md-12">
+		<h4>Subsidies Granters and Non Subsidies Granters</h4>
+	</div>
+	<div class="col-md-12">
+		<div id="chart_div"></div>
+	</div>
 </div>
+
 <?php $this->load->view('layouts/footer'); ?>
 
 <!--Load the AJAX API-->

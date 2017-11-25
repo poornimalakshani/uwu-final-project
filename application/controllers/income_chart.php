@@ -17,6 +17,7 @@ class income_chart extends CI_Controller {
     {
         $data['menu'] = "charts";
         $data['submenu'] = "charts-income_chart_view";
+
         $this->load->view('Chart/income_chart_view', $data);
     }
         

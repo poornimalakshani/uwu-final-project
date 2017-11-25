@@ -1,55 +1,60 @@
-<html>
-<head>
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
-    <script type="text/javascript">
-      // Load the Visualization API and the line package.
-      google.charts.load('current', {'packages':['bar']});
-      // Set a callback to run when the Google Visualization API is loaded.
-      google.charts.setOnLoadCallback(drawChart);
+<?php $this->load->view('layouts/header'); ?>
 
-    function drawChart() {
+<div class="row">
+	<div class="col-md-12">
+		<h4>Population based on Age</h4>
+	</div>
+	<div class="col-md-12">
+		<div id="bar_chart"></div>
+	</div>
+</div>
 
-        $.ajax({
-        type: 'POST',
-        url: '<?php echo base_url() . 'age_chart/getdata' ?>',
+<?php $this->load->view('layouts/footer'); ?>
 
-        success: function (data1) {
-        // Create our data table out of JSON data loaded from server.
-        var data = new google.visualization.DataTable();
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
 
-      data.addColumn('string', 'category');
-      data.addColumn('number', 'count');
+<script type="text/javascript">
+	// Load the Visualization API and the line package.
+	google.charts.load('current', {'packages':['bar']});
+	// Set a callback to run when the Google Visualization API is loaded.
+	google.charts.setOnLoadCallback(drawChart);
 
-      var jsonData = $.parseJSON(data1);
+	function drawChart() {
+		$.ajax({
+			type: 'POST',
+			url: '<?php echo base_url() . 'age_chart/getdata' ?>',
+			success: function (data1) {
+			// Create our data table out of JSON data loaded from server.
+			var data = new google.visualization.DataTable();
 
-console.log(jsonData)
-      for (var i = 0; i < jsonData.length; i++) {
-            data.addRow([jsonData[i].category, parseInt(jsonData[i].count)]);
-      }
-      var options = {
-        chart: {
-          title: 'Population based on Age',
-          //subtitle: 'Show Sales and Expense of Company'
-        },
-        width: 900,
-        height: 500,
-        axes: {
-          x: {
-            0: {side: 'top'}
-          }
-        }
+			data.addColumn('string', 'category');
+			data.addColumn('number', 'count');
 
-      };
-      var chart = new google.charts.Bar(document.getElementById('bar_chart'));
-      chart.draw(data, options);
-       }
-     });
-    }
-  </script>
-</head>
-<body>
+			var jsonData = $.parseJSON(data1);
 
-  <div id="bar_chart"></div>
-</body>
-</html>
+			console.log(jsonData)
+			for (var i = 0; i < jsonData.length; i++) {
+				data.addRow([jsonData[i].category, parseInt(jsonData[i].count)]);
+			}
+
+		var options = {
+			chart: {
+			title: '',
+			//subtitle: 'Show Sales and Expense of Company'
+		},
+		width: 900,
+		height: 500,
+		axes: {
+			x: {
+				0: {side: 'top'}
+			}
+		}
+
+	};
+	var chart = new google.charts.Bar(document.getElementById('bar_chart'));
+	chart.draw(data, options);
+	}
+});
+}
+</script>
