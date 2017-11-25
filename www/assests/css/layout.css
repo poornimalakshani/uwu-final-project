@@ -126,6 +126,12 @@
 	border-bottom: 1px solid #eee;
 	padding-bottom: 10px;
 }
+.main-container h4 small {
+	font-size: 13px;
+}
+.main-container .table.no-top-border td, .table.no-top-border th {
+	border-top: none;
+}
 .main-container .error-text {
 	margin-bottom: 10px;
 }
