@@ -44,7 +44,14 @@ $(document).ready(function() {
 
 		}
 
-		var title = ((isAdd) ? 'Add New ' : 'Edit ') + pageName;
+		var title = pageName;
+
+		if ($(this).data('page-name')) {
+			title = $(this).data('page-name');
+		}
+
+		title = ((isAdd) ? 'Add New ' : 'Edit ') + title;
+
 		$( "#dialog-form" ).dialog("option", "title", title);
 
 		$( "#dialog-form" ).dialog("option", "buttons", buttons);

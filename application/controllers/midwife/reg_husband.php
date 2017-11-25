@@ -129,6 +129,5 @@ class Reg_husband extends MY_Controller {
 
 			redirect('/midwife/reg_husband/');
 		}
-
 	}
 } 
