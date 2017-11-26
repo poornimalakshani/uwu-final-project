@@ -30,7 +30,11 @@
           });
 
 		  var content = "<p><?=$value->address; ?></p>";
-		  content += "<a href=\"/grama_niladhari/people1/<?=$value->id; ?>\">View</a>";
+
+		  <?php if($loggedInUserType == 'superadmin' && $loggedInUserType == 'admin' && $loggedInUserType == 'grama_niladhari') { ?>
+			content += "<a href=\"/grama_niladhari/people1/<?=$value->id; ?>\">View</a>";
+		  <?php } ?>
+
 		  google.maps.event.addListener(marker, 'click',
 				function(event)
 				{

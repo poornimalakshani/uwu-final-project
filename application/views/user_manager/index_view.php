@@ -18,7 +18,7 @@
 		}
 		?>
 		<?php if(empty($adminCount)) { ?>
-		<p class="text-warning">Sorry No Admin found!</p>
+		<p class="text-warning">Sorry No Users found!</p>
 		<?php } else { ?>
 		<table class="table table-striped">
 			<thead>
