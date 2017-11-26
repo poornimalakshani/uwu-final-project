@@ -228,4 +228,46 @@ class Dicision extends MY_Controller {
 
    }
 
+   public function get_schools_within_distance_from_home($homeId = 0){
+      $data = [];
+
+	  $this->load->model('home_model');
+
+	  $data['homeId'] = $homeId;
+	  $data['homes'] = $this->home_model->getAll('home', 'address ASC');
+
+	  $data['schoolList'] = [];
+	  if ($homeId != 0) {
+		  $data['schoolList'] = $this->home_model->findSchools($homeId);
+	  }
+
+	  $data['menu'] = "dicisions";
+	  $data['submenu'] = "dicisions-schools_within_distance_from_home";
+
+	  $this->load->view('dicisions/get_schools_within_distance_from_home_view', $data);
+   }
+
+   public function get_home_within_distance_from_school($schoolId = 0, $distance = 1){
+      $data = [];
+
+	  $this->load->model('home_model');
+	  $this->load->model('institutes_model');
+
+	  $data['schoolId'] = $schoolId;
+	  $data['distance'] = $distance;
+
+	  $data['shoolList'] = $this->institutes_model->getShoolList();
+
+	  $data['homeList'] = [];
+	  if ($schoolId != 0) {
+		  $data['homeList'] = $this->home_model->findHomesFromSchool($schoolId, $distance);
+	  }
+
+	  $data['menu'] = "dicisions";
+	  $data['submenu'] = "dicisions-home_within_distance_from_school";
+
+      $this->load->view('dicisions/get_home_within_distance_from_school_view', $data);
+
+   }
+
   }

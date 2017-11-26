@@ -20,6 +20,19 @@ class institutes_model extends MY_Model {
             array_push($field, $result[$i]->field);
         }
         return array_combine($id, $field);
-    }
+	}
+
+	public function getShoolList()
+	{
+		$this->db->select('list_field.*');
+		$this->db->join('list_field', 'list_field.id = institute_location.institute_type', 'inner');
+		$result = $this->db->get('institute_location');
+
+		if ($result->num_rows() > 0) {
+			return $result->result();
+		}
+
+		return FALSE;
+	}
 
 }

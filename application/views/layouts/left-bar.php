@@ -80,6 +80,8 @@
 					<li <?=(isset($submenu) && $submenu=='dicisions-get_risk_to_weight_children') ? 'class="active"':''; ?>><a href="/dicision/get_risk_to_weight_children">Children who have Risk For Malnutrition ?</a></li>
 					<li <?=(isset($submenu) && $submenu=='dicisions-get_malnutrition_children') ? 'class="active"':''; ?>><a href="/dicision/get_malnutrition_children">Children who have Malnutrition ?</a></li>
 					<li <?=(isset($submenu) && $submenu=='dicisions-get_malnutrition_percentage') ? 'class="active"':''; ?>><a href="/dicision/get_malnutrition_percentage">Percentage of Malnutrition Children ?</a></li>
+					<li <?=(isset($submenu) && $submenu=='dicisions-schools_within_distance_from_home') ? 'class="active"':''; ?>><a href="/dicision/get_schools_within_distance_from_home">Find Distance to Schools from Home</a></li>
+					<li <?=(isset($submenu) && $submenu=='dicisions-home_within_distance_from_school') ? 'class="active"':''; ?>><a href="/dicision/get_home_within_distance_from_school">Find Distance to Houses from School</a></li>
 
 				<?php } else if($loggedInUserType == 'grama_niladhari') { ?>
 					<li <?=(isset($submenu) && $submenu=='dicisions-get-disable-subsidies') ? 'class="active"':''; ?>><a href="/dicision/get_disable_subsidies">Who grant Disable Subsidies?</a></li>
@@ -94,6 +96,8 @@
 					<li <?=(isset($submenu) && $submenu=='dicisions-get_percentage_social_service_granters') ? 'class="active"':''; ?>><a href="/dicision/get_percentage_social_service_granters">Percentage of Social Service Granters?</a></li>
 					<li <?=(isset($submenu) && $submenu=='dicisions-percentage_subsidies_granters') ? 'class="active"':''; ?>><a href="/dicision/percentage_subsidies_granters">Percentage of all subsidies granters?</a></li>
 					<li <?=(isset($submenu) && $submenu=='dicisions-percentage_get_election') ? 'class="active"':''; ?>><a href="/dicision/percentage_get_election">Percentage of who have ability to get Election?</a></li>
+					<li <?=(isset($submenu) && $submenu=='dicisions-schools_within_distance_from_home') ? 'class="active"':''; ?>><a href="/dicision/get_schools_within_distance_from_home">Find Distance to Schools from Home</a></li>
+					<li <?=(isset($submenu) && $submenu=='dicisions-home_within_distance_from_school') ? 'class="active"':''; ?>><a href="/dicision/get_home_within_distance_from_school">Find Distance to Houses from School</a></li>
 
 				<?php } else if($loggedInUserType == 'midwife') { ?>
 					<li <?=(isset($submenu) && $submenu=='dicisions-get_normal_weight_children') ? 'class="active"':''; ?>><a href="/dicision/get_normal_weight_children">Children who have Normal Weight?</a></li>
@@ -104,6 +108,8 @@
 				<?php } else if($loggedInUserType == 'principal') { ?>
 					<li <?=(isset($submenu) && $submenu=='dicisions-percentage_A_for_maths') ? 'class="active"':''; ?>><a href="/dicision/percentage_A_for_maths">Who get A pass for Mathamatics in Ordinary Level?</a></li>
 					<li <?=(isset($submenu) && $submenu=='dicisions-ability_to_do_AL') ? 'class="active"':''; ?>><a href="/dicision/ability_to_do_AL">Who have ability to do Advanced Level?</a></li>
+					<li <?=(isset($submenu) && $submenu=='dicisions-schools_within_distance_from_home') ? 'class="active"':''; ?>><a href="/dicision/get_schools_within_distance_from_home">Find Distance to Schools from Home</a></li>
+					<li <?=(isset($submenu) && $submenu=='dicisions-home_within_distance_from_school') ? 'class="active"':''; ?>><a href="/dicision/get_home_within_distance_from_school">Find Distance to Houses from School</a></li>
 
 				<?php } else if($loggedInUserType == 'divisional_secretory') { ?>
 					<li <?=(isset($submenu) && $submenu=='dicisions-get_average_income') ? 'class="active"':''; ?>><a href="/dicision/get_average_income">Average Income?</a></li>
